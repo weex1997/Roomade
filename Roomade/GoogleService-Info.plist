@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1020588036614-jc5deudg30js1r15gb9svgsm6mv4o2e4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1020588036614-jc5deudg30js1r15gb9svgsm6mv4o2e4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDwCm0WzOHOYpsCwxznnuo6roOmZzrIbOQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1020588036614</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.4D.Roomade</string>
+	<key>PROJECT_ID</key>
+	<string>roomade-4d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>roomade-4d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1020588036614:ios:9e77974b0376884fcfa987</string>
+</dict>
+</plist>
