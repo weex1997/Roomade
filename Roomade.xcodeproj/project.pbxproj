@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC9EA69A299A211700186387 /* SingUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA699299A211700186387 /* SingUP.swift */; };
+		FC9EA69C299A29BE00186387 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69B299A29BE00186387 /* Verification.swift */; };
+		FC9EA69E299B837B00186387 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69D299B837B00186387 /* CountdownView.swift */; };
 		FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6422994C87A003FB295 /* RoomadeApp.swift */; };
 		FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6442994C87A003FB295 /* ContentView.swift */; };
 		FCEBA6472994C87B003FB295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEBA6462994C87B003FB295 /* Assets.xcassets */; };
 		FCEBA64A2994C87B003FB295 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEBA6492994C87B003FB295 /* Preview Assets.xcassets */; };
+		FCEBA6512994D078003FB295 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6502994D078003FB295 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC9EA699299A211700186387 /* SingUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUP.swift; sourceTree = "<group>"; };
+		FC9EA69B299A29BE00186387 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		FC9EA69D299B837B00186387 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		FCEBA63F2994C87A003FB295 /* Roomade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEBA6422994C87A003FB295 /* RoomadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomadeApp.swift; sourceTree = "<group>"; };
 		FCEBA6442994C87A003FB295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FCEBA6462994C87B003FB295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCEBA6492994C87B003FB295 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FCEBA6502994D078003FB295 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,10 @@
 		FCEBA6412994C87A003FB295 /* Roomade */ = {
 			isa = PBXGroup;
 			children = (
+				FCEBA6502994D078003FB295 /* SwiftUIView.swift */,
+				FC9EA699299A211700186387 /* SingUP.swift */,
+				FC9EA69B299A29BE00186387 /* Verification.swift */,
+				FC9EA69D299B837B00186387 /* CountdownView.swift */,
 				FCEBA6422994C87A003FB295 /* RoomadeApp.swift */,
 				FCEBA6442994C87A003FB295 /* ContentView.swift */,
 				FCEBA6462994C87B003FB295 /* Assets.xcassets */,
@@ -83,6 +95,8 @@
 			dependencies = (
 			);
 			name = Roomade;
+			packageProductDependencies = (
+			);
 			productName = Roomade;
 			productReference = FCEBA63F2994C87A003FB295 /* Roomade.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,8 @@
 				Base,
 			);
 			mainGroup = FCEBA6362994C87A003FB295;
+			packageReferences = (
+			);
 			productRefGroup = FCEBA6402994C87A003FB295 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9EA69E299B837B00186387 /* CountdownView.swift in Sources */,
+				FC9EA69C299A29BE00186387 /* Verification.swift in Sources */,
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
+				FC9EA69A299A211700186387 /* SingUP.swift in Sources */,
 				FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */,
+				FCEBA6512994D078003FB295 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
