@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F78202994DFB300D3D109 /* HomeCard.swift */; };
+		A8E064AE299B93C9004931B3 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064AD299B93C9004931B3 /* Favorite.swift */; };
+		A8E064B2299BA956004931B3 /* Carditems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B1299BA956004931B3 /* Carditems.swift */; };
+		A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B3299CB409004931B3 /* Filtermenu.swift */; };
 		FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6422994C87A003FB295 /* RoomadeApp.swift */; };
 		FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6442994C87A003FB295 /* ContentView.swift */; };
 		FCEBA6472994C87B003FB295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEBA6462994C87B003FB295 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A88F78202994DFB300D3D109 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
+		A8E064AD299B93C9004931B3 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		A8E064B1299BA956004931B3 /* Carditems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carditems.swift; sourceTree = "<group>"; };
+		A8E064B3299CB409004931B3 /* Filtermenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtermenu.swift; sourceTree = "<group>"; };
 		FCEBA63F2994C87A003FB295 /* Roomade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEBA6422994C87A003FB295 /* RoomadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomadeApp.swift; sourceTree = "<group>"; };
 		FCEBA6442994C87A003FB295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,8 +59,12 @@
 		FCEBA6412994C87A003FB295 /* Roomade */ = {
 			isa = PBXGroup;
 			children = (
+				A8E064B3299CB409004931B3 /* Filtermenu.swift */,
 				FCEBA6422994C87A003FB295 /* RoomadeApp.swift */,
 				FCEBA6442994C87A003FB295 /* ContentView.swift */,
+				A88F78202994DFB300D3D109 /* HomeCard.swift */,
+				A8E064B1299BA956004931B3 /* Carditems.swift */,
+				A8E064AD299B93C9004931B3 /* Favorite.swift */,
 				FCEBA6462994C87B003FB295 /* Assets.xcassets */,
 				FCEBA6482994C87B003FB295 /* Preview Content */,
 			);
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E064AE299B93C9004931B3 /* Favorite.swift in Sources */,
+				A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */,
+				A8E064B2299BA956004931B3 /* Carditems.swift in Sources */,
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
+				A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */,
 				FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
