@@ -7,38 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F78202994DFB300D3D109 /* HomeCard.swift */; };
+		A8E064AE299B93C9004931B3 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064AD299B93C9004931B3 /* Favorite.swift */; };
+		A8E064B2299BA956004931B3 /* Carditems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B1299BA956004931B3 /* Carditems.swift */; };
+		A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B3299CB409004931B3 /* Filtermenu.swift */; };
 		FC039C77299B91D600D72F06 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC039C76299B91D600D72F06 /* FirebaseAuth */; };
 		FC039C79299B91D600D72F06 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC039C78299B91D600D72F06 /* FirebaseFirestore */; };
 		FC039C7B299B927700D72F06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC039C7A299B927700D72F06 /* GoogleService-Info.plist */; };
 		FC9EA69A299A211700186387 /* SingUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA699299A211700186387 /* SingUP.swift */; };
 		FC9EA69C299A29BE00186387 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69B299A29BE00186387 /* Verification.swift */; };
 		FC9EA69E299B837B00186387 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69D299B837B00186387 /* CountdownView.swift */; };
-		A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F78202994DFB300D3D109 /* HomeCard.swift */; };
-		A8E064AE299B93C9004931B3 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064AD299B93C9004931B3 /* Favorite.swift */; };
-		A8E064B2299BA956004931B3 /* Carditems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B1299BA956004931B3 /* Carditems.swift */; };
-		A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B3299CB409004931B3 /* Filtermenu.swift */; };
 		FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6422994C87A003FB295 /* RoomadeApp.swift */; };
 		FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6442994C87A003FB295 /* ContentView.swift */; };
 		FCEBA6472994C87B003FB295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEBA6462994C87B003FB295 /* Assets.xcassets */; };
 		FCEBA64A2994C87B003FB295 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEBA6492994C87B003FB295 /* Preview Assets.xcassets */; };
-		FCEBA6512994D078003FB295 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6502994D078003FB295 /* SwiftUIView.swift */; };
+		FCEBA6512994D078003FB295 /* LogIN.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6502994D078003FB295 /* LogIN.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC039C7A299B927700D72F06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FC9EA699299A211700186387 /* SingUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUP.swift; sourceTree = "<group>"; };
-		FC9EA69B299A29BE00186387 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
-		FC9EA69D299B837B00186387 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		A88F78202994DFB300D3D109 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 		A8E064AD299B93C9004931B3 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		A8E064B1299BA956004931B3 /* Carditems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carditems.swift; sourceTree = "<group>"; };
 		A8E064B3299CB409004931B3 /* Filtermenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtermenu.swift; sourceTree = "<group>"; };
+		FC039C7A299B927700D72F06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC9EA699299A211700186387 /* SingUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUP.swift; sourceTree = "<group>"; };
+		FC9EA69B299A29BE00186387 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		FC9EA69D299B837B00186387 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		FCEBA63F2994C87A003FB295 /* Roomade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEBA6422994C87A003FB295 /* RoomadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomadeApp.swift; sourceTree = "<group>"; };
 		FCEBA6442994C87A003FB295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FCEBA6462994C87B003FB295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCEBA6492994C87B003FB295 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FCEBA6502994D078003FB295 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		FCEBA6502994D078003FB295 /* LogIN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIN.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		FCEBA6412994C87A003FB295 /* Roomade */ = {
 			isa = PBXGroup;
 			children = (
-				FCEBA6502994D078003FB295 /* SwiftUIView.swift */,
+				FCEBA6502994D078003FB295 /* LogIN.swift */,
 				FC9EA699299A211700186387 /* SingUP.swift */,
 				FC9EA69B299A29BE00186387 /* Verification.swift */,
 				FC9EA69D299B837B00186387 /* CountdownView.swift */,
@@ -185,7 +185,7 @@
 				FC9EA69A299A211700186387 /* SingUP.swift in Sources */,
 				A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */,
 				FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */,
-				FCEBA6512994D078003FB295 /* SwiftUIView.swift in Sources */,
+				FCEBA6512994D078003FB295 /* LogIN.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
