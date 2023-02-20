@@ -20,6 +20,11 @@
 		FC9EA69A299A211700186387 /* SingUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA699299A211700186387 /* SingUP.swift */; };
 		FC9EA69C299A29BE00186387 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69B299A29BE00186387 /* Verification.swift */; };
 		FC9EA69E299B837B00186387 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69D299B837B00186387 /* CountdownView.swift */; };
+		21D109A72998E762006C38D7 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D109A62998E762006C38D7 /* AccountView.swift */; };
+		21D109A9299B61C1006C38D7 /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D109A8299B61C1006C38D7 /* SubscribeView.swift */; };
+		21D109AE299D42CD006C38D7 /* ProductList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D109AD299D42CD006C38D7 /* ProductList.plist */; };
+		21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D109AF299D43EB006C38D7 /* StoreKitManager.swift */; };
+		21D109B2299E03C6006C38D7 /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 21D109B1299E03C6006C38D7 /* Products.storekit */; };
 		FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6422994C87A003FB295 /* RoomadeApp.swift */; };
 		FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6442994C87A003FB295 /* ContentView.swift */; };
 		FCEBA6472994C87B003FB295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEBA6462994C87B003FB295 /* Assets.xcassets */; };
@@ -39,6 +44,11 @@
 		FC9EA699299A211700186387 /* SingUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUP.swift; sourceTree = "<group>"; };
 		FC9EA69B299A29BE00186387 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		FC9EA69D299B837B00186387 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		21D109A62998E762006C38D7 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		21D109A8299B61C1006C38D7 /* SubscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeView.swift; sourceTree = "<group>"; };
+		21D109AD299D42CD006C38D7 /* ProductList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductList.plist; sourceTree = "<group>"; };
+		21D109AF299D43EB006C38D7 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		21D109B1299E03C6006C38D7 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		FCEBA63F2994C87A003FB295 /* Roomade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEBA6422994C87A003FB295 /* RoomadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomadeApp.swift; sourceTree = "<group>"; };
 		FCEBA6442994C87A003FB295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +112,11 @@
 				A8E064B1299BA956004931B3 /* Carditems.swift */,
 				FC0879A1299CD599001C8806 /* ViewModel */,
 				A8E064AD299B93C9004931B3 /* Favorite.swift */,
+				21D109A62998E762006C38D7 /* AccountView.swift */,
+				21D109A8299B61C1006C38D7 /* SubscribeView.swift */,
+				21D109B1299E03C6006C38D7 /* Products.storekit */,
+				21D109AD299D42CD006C38D7 /* ProductList.plist */,
+				21D109AF299D43EB006C38D7 /* StoreKitManager.swift */,
 				FCEBA6462994C87B003FB295 /* Assets.xcassets */,
 				FC039C7A299B927700D72F06 /* GoogleService-Info.plist */,
 				FCEBA6482994C87B003FB295 /* Preview Content */,
@@ -184,7 +199,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D109B2299E03C6006C38D7 /* Products.storekit in Resources */,
 				FCEBA64A2994C87B003FB295 /* Preview Assets.xcassets in Resources */,
+				21D109AE299D42CD006C38D7 /* ProductList.plist in Resources */,
 				FCEBA6472994C87B003FB295 /* Assets.xcassets in Resources */,
 				FC039C7B299B927700D72F06 /* GoogleService-Info.plist in Resources */,
 			);
@@ -202,12 +219,15 @@
 				A8E064AE299B93C9004931B3 /* Favorite.swift in Sources */,
 				A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */,
 				A8E064B2299BA956004931B3 /* Carditems.swift in Sources */,
+				21D109A72998E762006C38D7 /* AccountView.swift in Sources */,
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
 				FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */,
 				FC9EA69A299A211700186387 /* SingUP.swift in Sources */,
 				A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */,
 				FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */,
 				FCEBA6512994D078003FB295 /* LogIN.swift in Sources */,
+				21D109A9299B61C1006C38D7 /* SubscribeView.swift in Sources */,
+				21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roomade/Preview Content\"";
-				DEVELOPMENT_TEAM = CHXYY877GH;
+				DEVELOPMENT_TEAM = YNRLMYR8TS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Roomade/Info.plist;
@@ -372,7 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roomade/Preview Content\"";
-				DEVELOPMENT_TEAM = CHXYY877GH;
+				DEVELOPMENT_TEAM = YNRLMYR8TS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Roomade/Info.plist;
