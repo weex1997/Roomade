@@ -9,11 +9,18 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
-    @State var text = ""
+    @StateObject var phoneViewModel = PhoneViewModel()
+    
+    @State var PhoneNumber = ""
+    @State var isActive = false
+    @State var SaveData = false
     var body: some View {
         NavigationView {
             VStack{
-                
+                NavigationLink(destination: Verification(),isActive: $SaveData) {
+                }
+                NavigationLink(destination: SingUP(),isActive: $isActive) {
+                }
                 HStack(){
                     Text("Phone Number")
                         .foregroundColor(Color("DarkGaryColor"))
@@ -31,16 +38,23 @@ struct SwiftUIView: View {
                         .overlay(Color("DividerColor"))
                         .padding(.horizontal,10)
                         .padding(.vertical,12)
-                    TextField("05xxxxxxxx", text: $text)
+                    TextField("5xxxxxxxx", text: $PhoneNumber)
                         .font(.system(size: 16))
                 }
                 .frame(width: 358,height: 63)
                 .background(Color("GrayColor"))
                 .cornerRadius(6)
-                .padding(.horizontal,16)
                 .padding(.bottom,55)
                 HStack{
                     Button("Login") {
+                        phoneViewModel.createUserWithPhoneNumber(phoneNumber: PhoneNumber) { isSuccess in
+                            print("DEBUG: phone \(isSuccess)")
+                            
+                            if (isSuccess == true)
+                            {
+                                SaveData = true
+                            }
+                        }
                     }
                     .foregroundColor(Color.white)
                     .font(.system(size: 18,weight: .semibold))
@@ -64,6 +78,7 @@ struct SwiftUIView: View {
                     }
                 }
                 .padding(.top,46)
+                .padding(.bottom,54)
                 HStack{
                     Image("Google")
                     Button("Continue with Google") {
@@ -74,12 +89,16 @@ struct SwiftUIView: View {
                 }
                 .frame(width: 285,height: 54)
                 .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color("LightBlueColor"), lineWidth: 1)
-                    )
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("LightBlueColor"), lineWidth: 1)
+                )
+                .padding(.bottom,20)
                 HStack{
                     Image(systemName: "apple.logo")
+                        .resizable()
+                        .scaledToFit()
                         .foregroundColor(.white)
+                        .frame(width: 28.0, height: 28.0)
                     Button("Continue with Apple") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                     }
@@ -88,14 +107,24 @@ struct SwiftUIView: View {
                 }.frame(width: 285,height: 54)
                     .background(Color.black)
                     .cornerRadius(10)
+                    .padding(.bottom,30)
                 HStack{
-                    Button("Sing up") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    Button {
+                        
+                        isActive = true
+                        
+                    }label: {
+                        Text("Sing up")
+                            .underline()
+                            .foregroundColor(Color("PinkColor"))
+                            .font(.system(size: 20,weight: .regular))
                     }
+                    
                 }
                 .navigationBarTitle(Text("LOGIN"))
             }
-           
+            
+            
         }
     }
 }

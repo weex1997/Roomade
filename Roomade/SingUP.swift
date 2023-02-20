@@ -9,20 +9,25 @@ import SwiftUI
 
 struct SingUP: View {
     
-    @State var name = ""
-    @State var PhoneNumber = ""
-    @State var Birthdate = ""
-    @State var Profession = ""
+    @StateObject var phoneViewModel = PhoneViewModel()
     
+    @State var SaveData = false
+    
+    @State var phoneNumber = ""
+    @State var name = ""
+    @State private var Birthdate = Date.now
+    @State private var Gender = 1
+
     var body: some View {
         NavigationView {
             VStack{
-                
+                NavigationLink(destination: Verification(),isActive: $SaveData) {
+                }
                 HStack(){
                     Text("Name")
                         .foregroundColor(Color("DarkGaryColor"))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 17))
+                        .font(.system(size: 17,weight: .medium))
                 }
                 .padding(.bottom,3)
                 .padding(.leading,16)
@@ -32,70 +37,96 @@ struct SingUP: View {
                         .font(.system(size: 16))
                         .frame(width: 358,height: 43)
                         .overlay(RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color("LightBlueColor"), lineWidth: 1))
-                }
+                            .stroke(Color("LightBlueColor"), lineWidth: 1))
+                }.padding(.bottom,20)
                 HStack(){
                     Text("Phone Number")
                         .foregroundColor(Color("DarkGaryColor"))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 17))
+                        .font(.system(size: 17,weight: .medium))
                 }
                 .padding(.bottom,3)
                 .padding(.leading,16)
                 HStack{
-                    TextField("Add your phone number", text: $name)
+                    TextField("Add your phone number", text: $phoneNumber)
                         .padding(14)
                         .font(.system(size: 16))
                         .frame(width: 358,height: 43)
                         .overlay(RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color("LightBlueColor"), lineWidth: 1))
-                }
+                            .stroke(Color("LightBlueColor"), lineWidth: 1))
+                }.padding(.bottom,20)
                 HStack(){
                     Text("Birth date")
                         .foregroundColor(Color("DarkGaryColor"))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 17))
+                        .font(.system(size: 17,weight: .medium))
                 }
                 .padding(.bottom,3)
                 .padding(.leading,16)
                 HStack{
-                    TextField("18 February 1992", text: $name)
-                        .padding(14)
+                    
+                    
+                    DatePicker(selection: $Birthdate, in: ...Date.now, displayedComponents: .date) {
+                        Text("Select a date")
+                    }.padding(14)
                         .font(.system(size: 16))
                         .frame(width: 358,height: 43)
                         .overlay(RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color("LightBlueColor"), lineWidth: 1))
-                }
+                            .stroke(Color("LightBlueColor"), lineWidth: 1))
+                    
+                }.padding(.bottom,20)
                 HStack(){
-                    Text("Profession")
+                    Text("Gender")
                         .foregroundColor(Color("DarkGaryColor"))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 17))
+                        .font(.system(size: 17,weight: .medium))
                 }
                 .padding(.bottom,3)
                 .padding(.leading,16)
                 HStack{
-                    TextField("Select your profession", text: $name)
-                        .padding(14)
+                    Picker("Gender", selection: $Gender) {
+                        Text("Male").tag(0)
+                        Text("Famel").tag(1)
+                    }
+                    .padding(.leading,-175)
                         .font(.system(size: 16))
                         .frame(width: 358,height: 43)
                         .overlay(RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color("LightBlueColor"), lineWidth: 1))
-                }
+                            .stroke(Color("LightBlueColor"), lineWidth: 1))
+                }.padding(.bottom,55)
                 
                 HStack{
-                    Button("Next") {
+                    Button {
+                        
+                        UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
+                        UserDefaults.standard.set(name, forKey: "name")
+                        UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
+                        UserDefaults.standard.set(Gender, forKey: "Gender")
+                        
+                        print(phoneNumber)
+                        
+                        phoneViewModel.createUserWithPhoneNumber(phoneNumber: phoneNumber) { isSuccess in
+                            print("DEBUG: phone \(isSuccess)")
+                            
+                            if (isSuccess == true)
+                            {
+                                SaveData = true
+                            }
+                        }
+                    } label: {
+                        Text("Next")
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 18,weight: .semibold))
+                            .frame(width: 285,height: 54)
+                            .background(Color("BlueColor"))
+                            .cornerRadius(10)
                     }
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 18,weight: .semibold))
-                    .frame(width: 285,height: 54)
-                    .background(Color("BlueColor"))
-                    .cornerRadius(10)
+                    
                 }
                 
                 .navigationBarTitle(Text("SIGN UP"))
             }
-           
+            
         }
     }
 }
