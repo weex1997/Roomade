@@ -89,6 +89,7 @@ struct PhoneAuthApp: App {
         WindowGroup {
 <<<<<<< HEAD
             SingUP()
+            AccountView()
         }
     }
 }
