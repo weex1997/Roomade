@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D109A72998E762006C38D7 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D109A62998E762006C38D7 /* AccountView.swift */; };
+		21D109A9299B61C1006C38D7 /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D109A8299B61C1006C38D7 /* SubscribeView.swift */; };
+		21D109AE299D42CD006C38D7 /* ProductList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D109AD299D42CD006C38D7 /* ProductList.plist */; };
+		21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D109AF299D43EB006C38D7 /* StoreKitManager.swift */; };
+		21D109B2299E03C6006C38D7 /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 21D109B1299E03C6006C38D7 /* Products.storekit */; };
 		FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6422994C87A003FB295 /* RoomadeApp.swift */; };
 		FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBA6442994C87A003FB295 /* ContentView.swift */; };
 		FCEBA6472994C87B003FB295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEBA6462994C87B003FB295 /* Assets.xcassets */; };
@@ -14,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21D109A62998E762006C38D7 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		21D109A8299B61C1006C38D7 /* SubscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeView.swift; sourceTree = "<group>"; };
+		21D109AD299D42CD006C38D7 /* ProductList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductList.plist; sourceTree = "<group>"; };
+		21D109AF299D43EB006C38D7 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		21D109B1299E03C6006C38D7 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		FCEBA63F2994C87A003FB295 /* Roomade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEBA6422994C87A003FB295 /* RoomadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomadeApp.swift; sourceTree = "<group>"; };
 		FCEBA6442994C87A003FB295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +63,11 @@
 			children = (
 				FCEBA6422994C87A003FB295 /* RoomadeApp.swift */,
 				FCEBA6442994C87A003FB295 /* ContentView.swift */,
+				21D109A62998E762006C38D7 /* AccountView.swift */,
+				21D109A8299B61C1006C38D7 /* SubscribeView.swift */,
+				21D109B1299E03C6006C38D7 /* Products.storekit */,
+				21D109AD299D42CD006C38D7 /* ProductList.plist */,
+				21D109AF299D43EB006C38D7 /* StoreKitManager.swift */,
 				FCEBA6462994C87B003FB295 /* Assets.xcassets */,
 				FCEBA6482994C87B003FB295 /* Preview Content */,
 			);
@@ -125,7 +140,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D109B2299E03C6006C38D7 /* Products.storekit in Resources */,
 				FCEBA64A2994C87B003FB295 /* Preview Assets.xcassets in Resources */,
+				21D109AE299D42CD006C38D7 /* ProductList.plist in Resources */,
 				FCEBA6472994C87B003FB295 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D109A72998E762006C38D7 /* AccountView.swift in Sources */,
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
 				FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */,
+				21D109A9299B61C1006C38D7 /* SubscribeView.swift in Sources */,
+				21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roomade/Preview Content\"";
-				DEVELOPMENT_TEAM = CHXYY877GH;
+				DEVELOPMENT_TEAM = YNRLMYR8TS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -296,7 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roomade/Preview Content\"";
-				DEVELOPMENT_TEAM = CHXYY877GH;
+				DEVELOPMENT_TEAM = YNRLMYR8TS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
