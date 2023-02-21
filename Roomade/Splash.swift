@@ -12,7 +12,7 @@ struct Splash: View {
         
             
             ZStack {
-                Color("Blue1")
+                Color("Gray")
                     .ignoresSafeArea()
                 
                 
