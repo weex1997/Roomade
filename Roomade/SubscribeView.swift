@@ -92,7 +92,7 @@ struct SubscribeView: View {
                     }
                     
                 }.listRowBackground(Color("Lg"))
-                    .scrollContentBackground(.hidden)
+                   // .scrollContentBackground(.hidden)
                 //                List{
                 //                    HStack {
                 //                        Text(product.displayName)
@@ -109,7 +109,7 @@ struct SubscribeView: View {
                 //                        .padding(.trailing, 20)
                 //
                 //                }
-            } .scrollContentBackground(.hidden)
+            }//.scrollContentBackground(.hidden)
             
             //                        Text("")
             //
