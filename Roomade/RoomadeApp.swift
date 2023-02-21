@@ -88,7 +88,6 @@ struct PhoneAuthApp: App {
     var body: some Scene {
         WindowGroup {
             SingUP()
-            AccountView()
         }
     }
 }
