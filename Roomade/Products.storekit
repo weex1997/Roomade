@@ -1,0 +1,63 @@
+{
+  "identifier" : "8BDC1B3D",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "F928E698",
+      "localizations" : [
+        {
+          "description" : "3 Users",
+          "displayName" : "3 Users",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.temporary.three",
+      "referenceName" : "Three",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "8BFE61BF",
+      "localizations" : [
+        {
+          "description" : "6 Users",
+          "displayName" : "6 Users",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.temporary.six",
+      "referenceName" : "Six",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "E59AC314",
+      "localizations" : [
+        {
+          "description" : "10 Users",
+          "displayName" : "10 Users",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.temporary.ten",
+      "referenceName" : "Ten",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}
