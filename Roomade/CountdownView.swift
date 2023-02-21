@@ -45,6 +45,8 @@ struct ProgressBar: View {
     var counter: Int
     var countTo: Int
     
+   @State var isComplate = false
+    
     var body: some View {
         Circle()
             .fill(Color.clear)
@@ -64,6 +66,7 @@ struct ProgressBar: View {
                     .easeInOut(duration: 0.2)
                 )
         )
+        
     }
     
     func completed() -> Bool {
@@ -79,6 +82,8 @@ struct CountdownView: View {
     @State var counter: Int = 0
     var countTo: Int = 120
     
+    @StateObject var phoneViewModel = PhoneViewModel()
+
     var body: some View {
         VStack{
             ZStack{
@@ -86,6 +91,20 @@ struct CountdownView: View {
                 ProgressBar(counter: counter, countTo: countTo)
                 Clock(counter: counter, countTo: countTo)
             }
+               VStack{
+                    Button {
+                        if (counter == countTo){
+                            print("rest Timer")
+                            phoneViewModel.requestOtp()
+                            counter = 0
+                        }
+                    }label: {
+                        Text("Resend Code")
+                            .foregroundColor(ProgressBar(counter: counter, countTo: countTo).completed() ? Color("PinkColor") : Color.gray)
+                            .font(.system(size: 18))
+                    }
+                }.padding(37)
+            
         }.onReceive(timer) { time in
             if (self.counter < self.countTo) {
                 self.counter += 1
