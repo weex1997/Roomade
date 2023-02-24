@@ -29,9 +29,9 @@ struct HomeCard: View {
                     .ignoresSafeArea()
                 
                 VStack{
-//                 //   ProfileCard()
-//                        .padding(.top, 10 )
-//                        .padding(.bottom, 20)
+                    ProfileCard()
+                        .padding(.top, 10 )
+                        .padding(.bottom, 20)
                     HStack{
                         
                         // City filter
