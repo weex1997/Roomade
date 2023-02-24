@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileCard: View {
+    let name = UserDefaults.standard.string(forKey: "name") ?? "nil"
+    let uid = UserDefaults.standard.string(forKey: "uid") ?? nil
+
     var body: some View {
         //Profile card
   
@@ -34,12 +37,25 @@ struct ProfileCard: View {
                                 Text("Welcome,")
                                     .foregroundColor(.white)
                                     .font(.system(size: 17))
+                                if uid != nil {
+
+                                   //user is logged in
+                                    Text(name)
+                                        .font(.system(size: 25))
+                                        .frame(width: 75, height: 25, alignment: .center)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.8)                        .foregroundColor(.white)
+                                    
+                                    }else{
+                                     //user is not logged in
+                                        Text("Sign up")
+                                            .font(.system(size: 25))
+                                            .frame(width: 75, height: 25, alignment: .center)
+                                            .lineLimit(1)
+                                            .minimumScaleFactor(0.8)                        .foregroundColor(.white)
+                                    }
                                 
-                                Text("Sign up")
-                                    .font(.system(size: 25))
-                                    .frame(width: 75, height: 25, alignment: .center)
-                                    .lineLimit(1)
-                                    .minimumScaleFactor(0.8)                        .foregroundColor(.white)
+                                
                                 
                                 
                             } .padding(.trailing, 80)

@@ -20,7 +20,8 @@ struct HomeCard: View {
     @State private var selection3 = "Gender"
     let gender = ["Gender", "Female", "Male"]
     
-    
+    let uid = UserDefaults.standard.string(forKey: "uid") ?? nil
+
     var body: some View {
         
         NavigationView{
@@ -29,10 +30,22 @@ struct HomeCard: View {
                 .ignoresSafeArea()
             
                 VStack{
-                    NavigationLink(destination: LogIn().navigationBarBackButtonHidden(false)){
-                        ProfileCard()
-                            .padding(.top, 10 )
-                            .padding(.bottom, 20)
+                    if uid != nil {
+
+                       //user is logged in
+                        NavigationLink(destination: AccountView().navigationBarBackButtonHidden(false)){
+                            ProfileCard()
+                                .padding(.top, 10 )
+                                .padding(.bottom, 20)
+                        }
+                        }else{
+                         //user is not logged in
+                            NavigationLink(destination: LogIn().navigationBarBackButtonHidden(false)){
+                                ProfileCard()
+                                    .padding(.top, 10 )
+                                    .padding(.bottom, 20)
+                        }
+                    
                     }
                     HStack{
                         

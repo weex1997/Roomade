@@ -20,8 +20,8 @@ struct SingUP: View {
     @State var name = ""
     @State private var Birthdate = Date.now
     @State private var Gender = 1
-    let uid = UserDefaults.standard.string(forKey: "uid") ?? ""
-    let email = UserDefaults.standard.string(forKey: "email") ?? ""
+    let uid = UserDefaults.standard.string(forKey: "uid") ?? "nil"
+    let email = UserDefaults.standard.string(forKey: "email") ?? "nil"
 
     var body: some View {
         NavigationView {
