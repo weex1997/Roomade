@@ -22,13 +22,15 @@ struct HomeCard: View {
     
     
     var body: some View {
+        
         NavigationView{
+        ZStack{
+            Color("UserCard")
+                .ignoresSafeArea()
             
-            ZStack{
-                Color("UserCard")
-                    .ignoresSafeArea()
-                
                 VStack{
+
+                        
                     ProfileCard()
                         .padding(.top, 10 )
                         .padding(.bottom, 20)
@@ -73,8 +75,10 @@ struct HomeCard: View {
                             self.viewModel.fetchData()
                         }
                 }
-            }
+            
         }
+    }
+        
     }
     
 

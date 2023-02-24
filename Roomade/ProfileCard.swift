@@ -10,38 +10,46 @@ import SwiftUI
 struct ProfileCard: View {
     var body: some View {
         //Profile card
-        VStack{
-            ZStack{
-                Image("ProfileCard")
+  
+        NavigationView{
+            
+            VStack{
                 
-                HStack{
+                NavigationLink(destination: AccountView().navigationBarBackButtonHidden(false)){
                     ZStack{
                         
-                        RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.white)
-                            .frame(width: 66,height: 66)
-                        Image("Female")
+                        Image("ProfileCard")
+                        
+                        HStack{
+                            ZStack{
+                                
+                                RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.white)
+                                    .frame(width: 66,height: 66)
+                                Image("Female")
+                            }
+                            .padding(.trailing,24)
+                            
+                            
+                            VStack{
+                                Text("Welcome,")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 17))
+                                
+                                Text("Sara")
+                                    .font(.system(size: 25))
+                                    .frame(width: 75, height: 25, alignment: .center)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.8)                        .foregroundColor(.white)
+                                
+                                
+                            } .padding(.trailing, 80)
+                            
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.white)
+                                .font(.system(size: 24))
+                                .padding(.leading,30 )
+                        }
                     }
-                    .padding(.trailing,24)
-                    
-                    
-                    VStack{
-                        Text("Welcome,")
-                            .foregroundColor(.white)
-                            .font(.system(size: 17))
-                        
-                        Text("Sara")
-                            .font(.system(size: 25))
-                            .frame(width: 75, height: 25, alignment: .center)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.8)                        .foregroundColor(.white)
-                        
-                        
-                    } .padding(.trailing, 80)
-                    
-                    Image(systemName: "chevron.right")
-                        .foregroundColor(.white)
-                        .font(.system(size: 24))
-                        .padding(.leading,30 )
                 }
             }
         }
