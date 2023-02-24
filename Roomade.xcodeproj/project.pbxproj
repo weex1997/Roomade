@@ -12,10 +12,10 @@
 		21D109AE299D42CD006C38D7 /* ProductList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D109AD299D42CD006C38D7 /* ProductList.plist */; };
 		21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D109AF299D43EB006C38D7 /* StoreKitManager.swift */; };
 		21D109B629A35A48006C38D7 /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 21D109B529A35A48006C38D7 /* Products.storekit */; };
+		A8657B6729A7BD48006C4BB2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657B6629A7BD48006C4BB2 /* User.swift */; };
+		A8657B6929A7BD88006C4BB2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657B6829A7BD88006C4BB2 /* UserViewModel.swift */; };
+		A8657B6B29A7BDB4006C4BB2 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657B6A29A7BDB4006C4BB2 /* ProfileCard.swift */; };
 		A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F78202994DFB300D3D109 /* HomeCard.swift */; };
-		A8E064AE299B93C9004931B3 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064AD299B93C9004931B3 /* Favorite.swift */; };
-		A8E064B2299BA956004931B3 /* Carditems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B1299BA956004931B3 /* Carditems.swift */; };
-		A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E064B3299CB409004931B3 /* Filtermenu.swift */; };
 		FC039C7B299B927700D72F06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC039C7A299B927700D72F06 /* GoogleService-Info.plist */; };
 		FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */; };
 		FC0879C029A28A21001C8806 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC0879BF29A28A21001C8806 /* FirebaseAuth */; };
@@ -38,10 +38,10 @@
 		21D109AD299D42CD006C38D7 /* ProductList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductList.plist; sourceTree = "<group>"; };
 		21D109AF299D43EB006C38D7 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		21D109B529A35A48006C38D7 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		A8657B6629A7BD48006C4BB2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8657B6829A7BD88006C4BB2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		A8657B6A29A7BDB4006C4BB2 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		A88F78202994DFB300D3D109 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
-		A8E064AD299B93C9004931B3 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
-		A8E064B1299BA956004931B3 /* Carditems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carditems.swift; sourceTree = "<group>"; };
-		A8E064B3299CB409004931B3 /* Filtermenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtermenu.swift; sourceTree = "<group>"; };
 		FC039C7A299B927700D72F06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		FC0879A4299FC377001C8806 /* Roomade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roomade.entitlements; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */,
+				A8657B6829A7BD88006C4BB2 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -105,17 +106,16 @@
 				FC9EA699299A211700186387 /* SingUP.swift */,
 				FC9EA69B299A29BE00186387 /* Verification.swift */,
 				FC9EA69D299B837B00186387 /* CountdownView.swift */,
-				A8E064B3299CB409004931B3 /* Filtermenu.swift */,
 				FCEBA6422994C87A003FB295 /* RoomadeApp.swift */,
 				FCEBA6442994C87A003FB295 /* ContentView.swift */,
 				A88F78202994DFB300D3D109 /* HomeCard.swift */,
-				A8E064B1299BA956004931B3 /* Carditems.swift */,
+				A8657B6629A7BD48006C4BB2 /* User.swift */,
+				A8657B6A29A7BDB4006C4BB2 /* ProfileCard.swift */,
 				FC0879A1299CD599001C8806 /* ViewModel */,
-				A8E064AD299B93C9004931B3 /* Favorite.swift */,
 				21D109A62998E762006C38D7 /* AccountView.swift */,
 				21D109A8299B61C1006C38D7 /* SubscribeView.swift */,
-				21D109AD299D42CD006C38D7 /* ProductList.plist */,
 				21D109AF299D43EB006C38D7 /* StoreKitManager.swift */,
+				21D109AD299D42CD006C38D7 /* ProductList.plist */,
 				FCEBA6462994C87B003FB295 /* Assets.xcassets */,
 				FC039C7A299B927700D72F06 /* GoogleService-Info.plist */,
 				FCEBA6482994C87B003FB295 /* Preview Content */,
@@ -216,15 +216,15 @@
 			files = (
 				FC9EA69E299B837B00186387 /* CountdownView.swift in Sources */,
 				FC9EA69C299A29BE00186387 /* Verification.swift in Sources */,
-				A8E064AE299B93C9004931B3 /* Favorite.swift in Sources */,
 				A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */,
-				A8E064B2299BA956004931B3 /* Carditems.swift in Sources */,
 				21D109A72998E762006C38D7 /* AccountView.swift in Sources */,
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
 				FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */,
 				FC9EA69A299A211700186387 /* SingUP.swift in Sources */,
-				A8E064B4299CB409004931B3 /* Filtermenu.swift in Sources */,
+				A8657B6B29A7BDB4006C4BB2 /* ProfileCard.swift in Sources */,
 				FCEBA6432994C87A003FB295 /* RoomadeApp.swift in Sources */,
+				A8657B6729A7BD48006C4BB2 /* User.swift in Sources */,
+				A8657B6929A7BD88006C4BB2 /* UserViewModel.swift in Sources */,
 				FCEBA6512994D078003FB295 /* LogIN.swift in Sources */,
 				21D109A9299B61C1006C38D7 /* SubscribeView.swift in Sources */,
 				21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */,
