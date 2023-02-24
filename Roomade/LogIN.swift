@@ -224,7 +224,7 @@ struct LogIn: View {
                 //                    }
                 //
                 //                }
-                .navigationBarTitle(Text("LOGIN"))
+                .navigationBarTitle(Text("SING UP"))
             }
             
             

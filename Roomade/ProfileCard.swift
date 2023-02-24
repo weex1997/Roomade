@@ -48,7 +48,7 @@ struct ProfileCard: View {
                                     
                                     }else{
                                      //user is not logged in
-                                        Text("Sign up")
+                                        Text("Sign in")
                                             .font(.system(size: 25))
                                             .frame(width: 75, height: 25, alignment: .center)
                                             .lineLimit(1)

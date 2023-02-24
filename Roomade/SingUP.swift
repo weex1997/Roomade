@@ -140,7 +140,6 @@ struct SingUP: View {
                     
                 }
                 
-                .navigationBarTitle(Text("SIGN UP"))
             }
             
         }

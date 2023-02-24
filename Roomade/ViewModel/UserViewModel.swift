@@ -15,7 +15,7 @@ class userViewModel: ObservableObject{
     private var db = Firestore.firestore()
     
     func fetchData() {
-        db.collection("users").getDocuments { doucments, error in
+        db.collection("users").whereField("showProfile", isEqualTo: true).getDocuments { doucments, error in
             
             if let error = error {
                 print("error!:\(error.localizedDescription)")
@@ -25,7 +25,6 @@ class userViewModel: ObservableObject{
                     return
                 }
                 for document in documents {
-                    
                     let name = document.data()["name"] as? String
                     let budget = document.data()["budget"] as? String
                     let available = document.data()["available"] as? String

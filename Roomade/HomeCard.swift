@@ -108,7 +108,7 @@ struct HomeCard: View {
                         ForEach(viewModel.users, id: \.id) { user in
                             
                             
-                            if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget") {
+                            if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget")  {
                                 
                                 
                                 VStack{
