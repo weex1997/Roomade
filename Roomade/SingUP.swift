@@ -19,7 +19,9 @@ struct SingUP: View {
     @State private var Gender = 1
 
     var body: some View {
+//        ScrollView{
         NavigationView {
+            
             VStack{
                 NavigationLink(destination: Verification(),isActive: $SaveData) {
                 }
@@ -89,10 +91,10 @@ struct SingUP: View {
                         Text("Famel").tag(1)
                     }
                     .padding(.leading,-175)
-                        .font(.system(size: 16))
-                        .frame(width: 358,height: 43)
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color("LightBlueColor"), lineWidth: 1))
+                    .font(.system(size: 16))
+                    .frame(width: 358,height: 43)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color("LightBlueColor"), lineWidth: 1))
                 }.padding(.bottom,55)
                 
                 HStack{
@@ -126,8 +128,9 @@ struct SingUP: View {
                 
                 .navigationBarTitle(Text("SIGN UP"))
             }
-            
+      
         }
+      //  }//scroll
     }
 }
 
