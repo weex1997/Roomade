@@ -11,14 +11,14 @@ struct ProfileCard: View {
     var body: some View {
         //Profile card
   
-        NavigationView{
+        
             
             VStack{
                 
-                NavigationLink(destination: AccountView().navigationBarBackButtonHidden(false)){
+               
                     ZStack{
                         
-                        Image("ProfileCard")
+                            Image("ProfileCard")
                         
                         HStack{
                             ZStack{
@@ -35,7 +35,7 @@ struct ProfileCard: View {
                                     .foregroundColor(.white)
                                     .font(.system(size: 17))
                                 
-                                Text("Sara")
+                                Text("Sign up")
                                     .font(.system(size: 25))
                                     .frame(width: 75, height: 25, alignment: .center)
                                     .lineLimit(1)
@@ -51,10 +51,10 @@ struct ProfileCard: View {
                         }
                     }
                 }
-            }
+            
         }
     }
-}
+
 
 struct ProfileCard_Previews: PreviewProvider {
     static var previews: some View {

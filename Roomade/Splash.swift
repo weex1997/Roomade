@@ -9,8 +9,8 @@ import SwiftUI
 
 struct Splash: View {
     
-    @State var isActive = false
-    
+   
+    @State var isPresent = false
     var body: some View {
         
         NavigationView {
@@ -45,8 +45,11 @@ struct Splash: View {
                             
                         }
                         
-                        Button("Get Started") {
-                            HomeCard()
+                        Button{
+                            isPresent = true
+                        } label: {
+                            Text("Get Started")
+                            NavigationLink(destination:HomeCard().navigationBarBackButtonHidden(true), isActive: $isPresent){}
                         }
                         .frame(width: 219, height: 45)
                         .foregroundColor(Color.white)

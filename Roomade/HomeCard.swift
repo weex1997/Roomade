@@ -25,15 +25,15 @@ struct HomeCard: View {
         
         NavigationView{
         ZStack{
-            Color("UserCard")
+            Color("Background")
                 .ignoresSafeArea()
             
                 VStack{
-
-                        
-                    ProfileCard()
-                        .padding(.top, 10 )
-                        .padding(.bottom, 20)
+                    NavigationLink(destination: LogIn().navigationBarBackButtonHidden(false)){
+                        ProfileCard()
+                            .padding(.top, 10 )
+                            .padding(.bottom, 20)
+                    }
                     HStack{
                         
                         // City filter
@@ -88,7 +88,7 @@ struct HomeCard: View {
         NavigationView{
             VStack{
                 ZStack{
-                    Color("UserCard")
+                    Color("Background")
                         .ignoresSafeArea()
                     ScrollView {
                         
