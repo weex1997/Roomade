@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseFirestore
 
 struct SingUP: View {
     
@@ -17,6 +20,8 @@ struct SingUP: View {
     @State var name = ""
     @State private var Birthdate = Date.now
     @State private var Gender = 1
+    let uid = UserDefaults.standard.string(forKey: "uid") ?? ""
+    let email = UserDefaults.standard.string(forKey: "email") ?? ""
 
     var body: some View {
         NavigationView {
@@ -103,16 +108,27 @@ struct SingUP: View {
                         UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
                         UserDefaults.standard.set(Gender, forKey: "Gender")
                         
-                        print(phoneNumber)
+//                        print(phoneNumber)
+//
+//                        phoneViewModel.createUserWithPhoneNumber(phoneNumber: phoneNumber) { isSuccess in
+//                            print("DEBUG: phone \(isSuccess)")
+//
+//                            if (isSuccess == true)
+//                            {
+//                                SaveData = true
+//                            }
+//                        }
+                        let userData = [
+                            "id": uid,
+                            "email": email,
+                            "phoneNumber": phoneNumber,
+                            "name": name,
+                            "Birthdate": Birthdate,
+                            "Gender": Gender
+                        ] as [String : Any]
                         
-                        phoneViewModel.createUserWithPhoneNumber(phoneNumber: phoneNumber) { isSuccess in
-                            print("DEBUG: phone \(isSuccess)")
-                            
-                            if (isSuccess == true)
-                            {
-                                SaveData = true
-                            }
-                        }
+                        Firestore.firestore().collection("users").document(uid).setData(userData)
+                        
                     } label: {
                         Text("Next")
                             .foregroundColor(Color.white)

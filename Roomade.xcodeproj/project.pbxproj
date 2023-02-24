@@ -15,6 +15,8 @@
 		A8657B6729A7BD48006C4BB2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657B6629A7BD48006C4BB2 /* User.swift */; };
 		A8657B6929A7BD88006C4BB2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657B6829A7BD88006C4BB2 /* UserViewModel.swift */; };
 		A8657B6B29A7BDB4006C4BB2 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657B6A29A7BDB4006C4BB2 /* ProfileCard.swift */; };
+		5656F9FB29A4B5A300B22043 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656F9FA29A4B5A300B22043 /* Splash.swift */; };
+		5656F9FD29A4B5B700B22043 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656F9FC29A4B5B700B22043 /* Logo.swift */; };
 		A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F78202994DFB300D3D109 /* HomeCard.swift */; };
 		FC039C7B299B927700D72F06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC039C7A299B927700D72F06 /* GoogleService-Info.plist */; };
 		FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */; };
@@ -41,6 +43,8 @@
 		A8657B6629A7BD48006C4BB2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8657B6829A7BD88006C4BB2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		A8657B6A29A7BDB4006C4BB2 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
+		5656F9FA29A4B5A300B22043 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		5656F9FC29A4B5B700B22043 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		A88F78202994DFB300D3D109 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 		FC039C7A299B927700D72F06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +115,9 @@
 				A88F78202994DFB300D3D109 /* HomeCard.swift */,
 				A8657B6629A7BD48006C4BB2 /* User.swift */,
 				A8657B6A29A7BDB4006C4BB2 /* ProfileCard.swift */,
+				A8E064B1299BA956004931B3 /* Carditems.swift */,
+				5656F9FC29A4B5B700B22043 /* Logo.swift */,
+				5656F9FA29A4B5A300B22043 /* Splash.swift */,
 				FC0879A1299CD599001C8806 /* ViewModel */,
 				21D109A62998E762006C38D7 /* AccountView.swift */,
 				21D109A8299B61C1006C38D7 /* SubscribeView.swift */,
@@ -217,6 +224,8 @@
 				FC9EA69E299B837B00186387 /* CountdownView.swift in Sources */,
 				FC9EA69C299A29BE00186387 /* Verification.swift in Sources */,
 				A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */,
+				5656F9FB29A4B5A300B22043 /* Splash.swift in Sources */,
+				A8E064B2299BA956004931B3 /* Carditems.swift in Sources */,
 				21D109A72998E762006C38D7 /* AccountView.swift in Sources */,
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
 				FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */,
@@ -227,6 +236,7 @@
 				A8657B6929A7BD88006C4BB2 /* UserViewModel.swift in Sources */,
 				FCEBA6512994D078003FB295 /* LogIN.swift in Sources */,
 				21D109A9299B61C1006C38D7 /* SubscribeView.swift in Sources */,
+				5656F9FD29A4B5B700B22043 /* Logo.swift in Sources */,
 				21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -338,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
