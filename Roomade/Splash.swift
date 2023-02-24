@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct Splash: View {
+    
+    @State var isActive = false
+    
     var body: some View {
         
-            
+        NavigationView {
             ZStack {
+               // NavigationLink(destination: HomeCard(),isActive: $isActive)
                 Color("Gray")
                     .ignoresSafeArea()
                 
@@ -42,6 +46,7 @@ struct Splash: View {
                         }
                         
                         Button("Get Started") {
+                            HomeCard()
                         }
                         .frame(width: 219, height: 45)
                         .foregroundColor(Color.white)
@@ -53,6 +58,7 @@ struct Splash: View {
                     }
                 }.padding(.bottom,30)
             }
+        }
         }
     }
 

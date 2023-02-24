@@ -67,7 +67,7 @@ struct LogIn: View {
     var body: some View {
         NavigationView {
             VStack{
-                NavigationLink(destination: Verification(),isActive: $SaveData) {
+                NavigationLink(destination: HomeCard(),isActive: $SaveData) {
                 }
                 NavigationLink(destination: SingUP(),isActive: $isActive) {
                 }

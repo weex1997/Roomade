@@ -12,63 +12,65 @@ struct Logo: View {
 @State private var size = 0.5
 @State private var opacity = 0.5
 
-//@AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
+@AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
 
-var body: some View {
-    
-//    if isActive {
-//        if !isUserOnboarded {
-//            onbording()
-//        } else {
-//            ContentView()
-//        }
-//    } else {
-    ZStack {
-        Color("Blue1")
-            .ignoresSafeArea()
-
+    var body: some View {
         
-        Image("Logo")
-            .resizable()
-            .scaledToFit()
-           
-            .frame(width: 90, height: 128)
-            .aspectRatio(0.3, contentMode: .fit)
-            .scaleEffect(size)
-            .opacity(opacity)
-            .padding(.bottom,-10)
-        
-        VStack{
-            Text("ROOMADE")
-                //.font(Montserrat)
-                .bold()
-                .font(.title)
-                .font(.system(size: 24,weight: .semibold))
-                .foregroundColor(Color.white)
-                .frame(width: 163, height: 29)
-                 .padding(.top,180)
-            
-           
-            
-            
-        }
-        
-         
-    } .onAppear {
-        withAnimation(.easeIn(duration: 1.2)) {
-            self.size = 2.00
-            self.opacity = 2.00
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) {
-            withAnimation {
-                self.isActive = true
+        if isActive {
+            if !isUserOnboarded {
+                Splash()
+            } else {
+                HomeCard()
             }
         }
-        
+        else{
+            ZStack {
+                Color("Blue1")
+                    .ignoresSafeArea()
+                
+                
+                Image("Logo")
+                    .resizable()
+                    .scaledToFit()
+                
+                    .frame(width: 90, height: 128)
+                    .aspectRatio(0.3, contentMode: .fit)
+                    .scaleEffect(size)
+                    .opacity(opacity)
+                    .padding(.bottom,-10)
+                
+                VStack{
+                    Text("ROOMADE")
+                    //.font(Montserrat)
+                        .bold()
+                        .font(.title)
+                        .font(.system(size: 24,weight: .semibold))
+                        .foregroundColor(Color.white)
+                        .frame(width: 163, height: 29)
+                        .padding(.top,180)
+                    
+                    
+                    
+                    
+                }
+                
+                
+            } .onAppear {
+                withAnimation(.easeIn(duration: 1.2)) {
+                    self.size = 2.00
+                    self.opacity = 2.00
+                }
+                
+            }
+            .onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    withAnimation {
+                        self.isActive = true
+                    }
+                }
+            }
+        }
     }
-}
-
 
 }
 //}
