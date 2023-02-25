@@ -140,9 +140,9 @@ struct AccountView: View {
                         HStack{
                             NavigationLink(destination: HomeCard().navigationBarBackButtonHidden(true), isActive: $isPresent){}
                             Button {
-                                ResetDay()
-//                                logIn.signOut()
-//                                isPresent = true
+                                //ResetDay()
+                                logIn.signOut()
+                                isPresent = true
                             } label: {
                                 Text("Log Out")
                                 Image(systemName: "chevron.right")

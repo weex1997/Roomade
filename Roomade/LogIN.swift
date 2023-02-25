@@ -65,7 +65,6 @@ struct LogIn: View {
     @State var isActive = false
     @State var SaveData = false
     var body: some View {
-        NavigationView {
             VStack{
                 NavigationLink(destination: SingUP().navigationBarBackButtonHidden(true), isActive: $isActive){}
                 NavigationLink(destination: HomeCard().navigationBarBackButtonHidden(true), isActive: $SaveData){}
@@ -234,7 +233,7 @@ struct LogIn: View {
             
             
         }
-    }
+
     
     func signOut() {
         do{
@@ -259,37 +258,37 @@ struct LogIn: View {
         
     }
     
-    func fetchUser() {
-        let userUID = Auth.auth().currentUser?.uid
-        
-        Firestore.firestore().collection("users").document(userUID!).getDocument { snapshot, error in
-            if error != nil {
-                // ERROR
-            }
-            else {
-                print("get data")
-                let name = snapshot?.get("name")
-                let phoneNumber = snapshot?.get("phoneNumber")
-                let Birthdate = snapshot?.get("Birthdate")
-                let Gender = snapshot?.get("Gender")
-                
-                if (phoneNumber == nil){
-                    isActive = true
-
-                }
-                else{
-                    UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
-                    UserDefaults.standard.set(name, forKey: "name")
-                    UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
-                    UserDefaults.standard.set(Gender, forKey: "Gender")
-                    
-                    SaveData = true
-                    
-                }
-               
-            }
-        }
-    }
+//    func fetchUser() {
+//        let userUID = Auth.auth().currentUser?.uid
+//
+//        Firestore.firestore().collection("users").document(userUID!).getDocument { snapshot, error in
+//            if error != nil {
+//                // ERROR
+//            }
+//            else {
+//                print("get data")
+//                let name = snapshot?.get("name")
+//                let phoneNumber = snapshot?.get("phoneNumber")
+//                let Birthdate = snapshot?.get("Birthdate")
+//                let Gender = snapshot?.get("Gender")
+//
+//                if (phoneNumber == nil){
+//                    isActive = true
+//
+//                }
+//                else{
+//                    UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
+//                    UserDefaults.standard.set(name, forKey: "name")
+//                    UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
+//                    UserDefaults.standard.set(Gender, forKey: "Gender")
+//
+//                    SaveData = true
+//
+//                }
+//
+//            }
+//        }
+//    }
     
     private func getDocument() {
             //Get specific document from current user
@@ -317,13 +316,20 @@ struct LogIn: View {
                 else{
                     UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
                     UserDefaults.standard.set(name, forKey: "name")
-                    UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
+                    //UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
                     UserDefaults.standard.set(Gender, forKey: "Gender")
-                    
+                    ResetDay()
                     SaveData = true
                     
                 }
             }
+        }
+    
+    func ResetDay() {
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+        print("\(key) = \(value) \n")
+        }
+//        print("Hi")
         }
 }
 struct SwiftUIView_Previews: PreviewProvider {
