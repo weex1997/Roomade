@@ -65,7 +65,6 @@ struct LogIn: View {
     @State var isActive = false
     @State var SaveData = false
     var body: some View {
-        NavigationView {
             VStack{
                 NavigationLink(destination: SingUP().navigationBarBackButtonHidden(true), isActive: $isActive){}
                 NavigationLink(destination: HomeCard().navigationBarBackButtonHidden(true), isActive: $SaveData){}
@@ -234,7 +233,7 @@ struct LogIn: View {
             
             
         }
-    }
+
     
     func signOut() {
         do{

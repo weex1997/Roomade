@@ -25,7 +25,7 @@ struct SingUP: View {
     
     var body: some View {
 //        ScrollView{
-        NavigationView {
+
             
             VStack{
                 NavigationLink(destination: Verification(),isActive: $SaveData) {
@@ -147,7 +147,6 @@ struct SingUP: View {
         }
       //  }//scroll
     }
-}
 
 struct SingUP_Previews: PreviewProvider {
     static var previews: some View {
