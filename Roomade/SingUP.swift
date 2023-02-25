@@ -22,9 +22,8 @@ struct SingUP: View {
     @State private var Gender = 1
     let uid = UserDefaults.standard.string(forKey: "uid") ?? "nil"
     let email = UserDefaults.standard.string(forKey: "email") ?? "nil"
-
+    
     var body: some View {
-        NavigationView {
             VStack{
                 NavigationLink(destination: Verification(),isActive: $SaveData) {
                 }
@@ -94,40 +93,40 @@ struct SingUP: View {
                         Text("Famel").tag(1)
                     }
                     .padding(.leading,-175)
-                        .font(.system(size: 16))
-                        .frame(width: 358,height: 43)
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color("LightBlueColor"), lineWidth: 1))
+                    .font(.system(size: 16))
+                    .frame(width: 358,height: 43)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color("LightBlueColor"), lineWidth: 1))
                 }.padding(.bottom,55)
                 
                 HStack{
                     Button {
                         
+                       
+                        
+                        //                        print(phoneNumber)
+                        //
+                        //                        phoneViewModel.createUserWithPhoneNumber(phoneNumber: phoneNumber) { isSuccess in
+                        //                            print("DEBUG: phone \(isSuccess)")
+                        //
+                        //                            if (isSuccess == true)
+                        //                            {
+                        //                                SaveData = true
+                        //                            }
+                        //                        }
+                        let db = Firestore.firestore()
+                        let userUID = Auth.auth().currentUser?.uid
+
+                        db.collection("users").document(userUID!).setData([
+                            "phoneNumber": phoneNumber,
+                            "name": name,
+                            "Birthdate": Birthdate,
+                            "Gender": Gender ], merge: true)
+                        
                         UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
                         UserDefaults.standard.set(name, forKey: "name")
                         UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
                         UserDefaults.standard.set(Gender, forKey: "Gender")
-                        
-//                        print(phoneNumber)
-//
-//                        phoneViewModel.createUserWithPhoneNumber(phoneNumber: phoneNumber) { isSuccess in
-//                            print("DEBUG: phone \(isSuccess)")
-//
-//                            if (isSuccess == true)
-//                            {
-//                                SaveData = true
-//                            }
-//                        }
-                        let userData = [
-                            "id": uid,
-                            "email": email,
-                            "phoneNumber": phoneNumber,
-                            "name": name,
-                            "Birthdate": Birthdate,
-                            "Gender": Gender
-                        ] as [String : Any]
-                        
-                        Firestore.firestore().collection("users").document(uid).setData(userData)
                         
                     } label: {
                         Text("Next")
@@ -143,7 +142,6 @@ struct SingUP: View {
             }
             
         }
-    }
 }
 
 struct SingUP_Previews: PreviewProvider {

@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseFirestore
 
 struct AccountView: View {
+    
+    let name = UserDefaults.standard.string(forKey: "name") ?? "nil"
+    @State var logIn = LogIn()
+    @State var isPresent = false
     var body: some View {
         
         NavigationView{
@@ -28,7 +35,7 @@ struct AccountView: View {
                             Image("avatar")
                         }//zstack
                         
-                        Text("Sara Ali")
+                        Text(name)
                             .font(.title2)
                             .foregroundColor(.white)
                         
@@ -116,10 +123,16 @@ struct AccountView: View {
                             .frame(width:360, height: 65)
                         
                         HStack{
-                            Text("Log Out")
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.gray)
-                                .padding(.leading, 234)
+                            NavigationLink(destination: HomeCard().navigationBarBackButtonHidden(true), isActive: $isPresent){}
+                            Button {
+                                logIn.signOut()
+                                isPresent = true
+                            } label: {
+                                Text("Log Out")
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.gray)
+                                    .padding(.leading, 234)
+                            }
                         }//hstack of list
                     }//zstack of logout
                     

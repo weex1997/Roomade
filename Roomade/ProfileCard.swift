@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseFirestore
 
 struct ProfileCard: View {
     let name = UserDefaults.standard.string(forKey: "name") ?? "nil"
-    let uid = UserDefaults.standard.string(forKey: "uid") ?? nil
 
     var body: some View {
         //Profile card
@@ -37,8 +39,10 @@ struct ProfileCard: View {
                                 Text("Welcome,")
                                     .foregroundColor(.white)
                                     .font(.system(size: 17))
-                                if uid != nil {
+                                
+                                let user1 = Auth.auth().currentUser;
 
+                                if ((user1) != nil) {
                                    //user is logged in
                                     Text(name)
                                         .font(.system(size: 25))

@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseFirestore
 
 struct HomeCard: View {
     
@@ -20,17 +23,17 @@ struct HomeCard: View {
     @State private var selection3 = "Gender"
     let gender = ["Gender", "Female", "Male"]
     
-    let uid = UserDefaults.standard.string(forKey: "uid") ?? nil
 
     var body: some View {
         
-        NavigationView{
+
         ZStack{
             Color("Background")
                 .ignoresSafeArea()
             
                 VStack{
-                    if uid != nil {
+                    let user1 = Auth.auth().currentUser;
+                    if ((user1) != nil) {
 
                        //user is logged in
                         NavigationLink(destination: AccountView().navigationBarBackButtonHidden(false)){
@@ -92,13 +95,13 @@ struct HomeCard: View {
         }
     }
         
-    }
+
     
 
     
     var userCard : some View {
         
-        NavigationView{
+
             VStack{
                 ZStack{
                     Color("Background")
@@ -198,8 +201,7 @@ struct HomeCard: View {
                                     
                                 }.padding(.top, 10)
                             }
-                            
-                        }
+
                         // End of big VStack
                         
                     }
