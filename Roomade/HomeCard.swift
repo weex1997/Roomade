@@ -36,7 +36,7 @@ struct HomeCard: View {
                     if ((user1) != nil) {
 
                        //user is logged in
-                        NavigationLink(destination: AccountView().navigationBarBackButtonHidden(false)){
+                        NavigationLink(destination: AccountView(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false )).navigationBarBackButtonHidden(false)){
                             ProfileCard()
                                 .padding(.top, 10 )
                                 .padding(.bottom, 20)
@@ -64,7 +64,7 @@ struct HomeCard: View {
                                         Text($0)
                                     }
                                 }.pickerStyle(.automatic)
-                            }//.padding()
+                            }
                         }.padding(.leading, 170)
                         
                         //Budget filter
@@ -82,8 +82,23 @@ struct HomeCard: View {
                             }.padding(.trailing, 230)
                                 .padding(.leading, 16)
                         }
-                        
                         // Gender filter
+//                        VStack{
+//                            ZStack{
+//
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .fill(.white)
+//                                    .frame(width: 134, height: 44)
+//                                Picker("Select a gender", selection: $selection3) {
+//                                    ForEach(gender, id: \.self) {
+//                                        Text($0)
+//                                    }
+//                                }.pickerStyle(.automatic)
+//                            }.padding(.trailing, 230)
+//                                .padding(.leading, 16)
+//                        }
+                        
+                        
                     }
                     
                     userCard
@@ -95,8 +110,6 @@ struct HomeCard: View {
         }
     }
         
-
-    
 
     
     var userCard : some View {
@@ -111,7 +124,7 @@ struct HomeCard: View {
                         ForEach(viewModel.users, id: \.id) { user in
                             
                             
-                            if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget")  {
+                            if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget") {
                                 
                                 
                                 VStack{
@@ -124,14 +137,30 @@ struct HomeCard: View {
                                                 .frame(width: 358,height: 173)
                                             VStack{
                                                 HStack{
+                                                    // Gender condition
                                                     ZStack{
-                                                        RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("FemaleAvatar"))
-                                                            .frame(width: 60,height: 60)
-                                                            .padding(.trailing,12 )
-                                                            .padding(.leading,17 )
-                                                        
-                                                        Image("\(user.img)")
-                                                        
+                                                        if (user.Gender == "1") {
+                                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                                                .fill(Color("FemaleAvatar"))
+                                                                .frame(width: 60,height: 60)
+                                                                .padding(.trailing,12 )
+                                                                .padding(.leading,17 )
+                                                        }
+                                                        else {
+                                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                                                .fill(Color("MaleAvatar"))
+                                                                .frame(width: 60,height: 60)
+                                                                .padding(.trailing,12 )
+                                                                .padding(.leading,17 )
+                                                        }
+                                                        if (user.Gender == "1") {
+                                                            Image("0")
+                                                        }
+                                                            else {
+                                                                
+                                                                Image("2")
+                                                            }
+                                                           
                                                     }
                                                     VStack{
                                                         Text(user.name)

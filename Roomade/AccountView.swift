@@ -12,13 +12,16 @@ import FirebaseFirestore
 
 struct AccountView: View {
     
+    @State var userDetails : UserDetails
     let name = UserDefaults.standard.string(forKey: "name") ?? "nil"
     @State var logIn = LogIn()
     @State var isPresent = false
+    let Gender = UserDefaults.standard.integer(forKey: "Gender") 
+    let city = UserDefaults.standard.string(forKey: "city") ?? "nil"
+
+
     var body: some View {
-        
-        NavigationView{
-            
+
             VStack{
                 ZStack{
                     
@@ -32,14 +35,20 @@ struct AccountView: View {
                                 .fill(.white)
                                 .frame(width: 80,height: 80)
                             
-                            Image("avatar")
+                            if (Gender == 1) {
+                                Image("0")
+                            }
+                            else {
+                                
+                                Image("2")
+                            }
                         }//zstack
                         
                         Text(name)
                             .font(.title2)
                             .foregroundColor(.white)
                         
-                        Text("Riyadh")
+                        Text(city)
                             .font(.footnote)
                             .foregroundColor(.white)
                         
@@ -61,9 +70,10 @@ struct AccountView: View {
                             .frame(width:360, height: 65)
                         
                         NavigationLink {
-                            SubscribeView()
+                            informationView(userDetails: userDetails)
                         } label: {
                             Text("Information")
+
                                 .foregroundColor(.black)
                             //Spacer()
                             Image(systemName: "chevron.right")
@@ -140,13 +150,11 @@ struct AccountView: View {
                 }//vstack of list
                 .padding(.bottom, 200)
             }//vstack
-            
-        }//nav
     }//body
 }//strcut
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
     }
 }

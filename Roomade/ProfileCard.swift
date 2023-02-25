@@ -15,9 +15,7 @@ struct ProfileCard: View {
 
     var body: some View {
         //Profile card
-  
-        
-            
+
             VStack{
                 
                
@@ -30,7 +28,7 @@ struct ProfileCard: View {
                                 
                                 RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.white)
                                     .frame(width: 66,height: 66)
-                                Image("Female")
+                                Image("0")
                             }
                             .padding(.trailing,24)
                             

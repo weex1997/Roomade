@@ -29,7 +29,8 @@ class userViewModel: ObservableObject{
                     let budget = document.data()["budget"] as? String
                     let available = document.data()["available"] as? String
                     let city = document.data()["city"] as? String
-                    let user = User(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", img: 0)
+                    let Gender = document.data()["Gender"] as? String
+                    let user = User(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? "")
                     self.users.append(user)
                     print("SSSS:\(self.users.description)")
                 

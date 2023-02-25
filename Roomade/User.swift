@@ -14,5 +14,5 @@ struct User: Identifiable {
     var city: String
     var budget: String
     var available: String
-    var img: Int
+    var Gender: String
 }
