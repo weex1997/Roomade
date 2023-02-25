@@ -79,6 +79,20 @@ struct HomeCard: View {
                             }.padding(.trailing, 230)
                                 .padding(.leading, 16)
                         }
+//                        VStack{
+//                            ZStack{
+//
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .fill(.white)
+//                                    .frame(width: 134, height: 44)
+//                                Picker("Select a gender", selection: $selection3) {
+//                                    ForEach(gender, id: \.self) {
+//                                        Text($0)
+//                                    }
+//                                }.pickerStyle(.automatic)
+//                            }.padding(.trailing, 230)
+//                                .padding(.leading, 16)
+//                        }
                         
                         // Gender filter
                     }
@@ -108,7 +122,7 @@ struct HomeCard: View {
                         ForEach(viewModel.users, id: \.id) { user in
                             
                             
-                            if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget")  {
+                            if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget") {
                                 
                                 
                                 VStack{
@@ -122,12 +136,30 @@ struct HomeCard: View {
                                             VStack{
                                                 HStack{
                                                     ZStack{
-                                                        RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("FemaleAvatar"))
-                                                            .frame(width: 60,height: 60)
-                                                            .padding(.trailing,12 )
-                                                            .padding(.leading,17 )
+                                                        if (user.Gender == "1") {
+                                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                                                .fill(Color("FemaleAvatar"))
+                                                                .frame(width: 60,height: 60)
+                                                                .padding(.trailing,12 )
+                                                                .padding(.leading,17 )
+                                                        }
+                                                        else {
+                                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                                                .fill(Color("MaleAvatar"))
+                                                                .frame(width: 60,height: 60)
+                                                                .padding(.trailing,12 )
+                                                                .padding(.leading,17 )
+                                                        }
+                                                        if (user.Gender == "1") {
+                                                            Image("0")
+                                                        }
+                                                            else {
+                                                                
+                                                                Image("2")
+                                                            }
+                                                            //                                                        if SingUP(Gender: 1)
+                                                            // Gender photo
                                                         
-                                                        Image("\(user.img)")
                                                         
                                                     }
                                                     VStack{
