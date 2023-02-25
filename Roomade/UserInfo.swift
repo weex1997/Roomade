@@ -46,7 +46,7 @@ struct UserInfo: View {
                             
                                 .foregroundColor(.white)
                             
-                                Text("jjjj")
+                                Text("Riyadh")
                             
                                 .font(.footnote)
                             
