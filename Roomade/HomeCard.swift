@@ -61,7 +61,7 @@ struct HomeCard: View {
                                         Text($0)
                                     }
                                 }.pickerStyle(.automatic)
-                            }//.padding()
+                            }
                         }.padding(.leading, 170)
                         
                         //Budget filter
@@ -79,6 +79,7 @@ struct HomeCard: View {
                             }.padding(.trailing, 230)
                                 .padding(.leading, 16)
                         }
+                        // Gender filter
 //                        VStack{
 //                            ZStack{
 //
@@ -94,7 +95,7 @@ struct HomeCard: View {
 //                                .padding(.leading, 16)
 //                        }
                         
-                        // Gender filter
+                        
                     }
                     
                     userCard
@@ -107,8 +108,6 @@ struct HomeCard: View {
     }
         
     }
-    
-
     
     var userCard : some View {
         
@@ -135,6 +134,7 @@ struct HomeCard: View {
                                                 .frame(width: 358,height: 173)
                                             VStack{
                                                 HStack{
+                                                    // Gender condition
                                                     ZStack{
                                                         if (user.Gender == "1") {
                                                             RoundedRectangle(cornerRadius: 15, style: .continuous)
@@ -157,10 +157,7 @@ struct HomeCard: View {
                                                                 
                                                                 Image("2")
                                                             }
-                                                            //                                                        if SingUP(Gender: 1)
-                                                            // Gender photo
-                                                        
-                                                        
+                                                           
                                                     }
                                                     VStack{
                                                         Text(user.name)
