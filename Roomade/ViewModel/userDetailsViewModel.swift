@@ -11,12 +11,12 @@ import FirebaseFirestore
 
 class userDetailsViewModel: ObservableObject{
     
-    @Published var users = [User]()
+    @Published var userData = [UserDetails]()
     
     private var db = Firestore.firestore()
-    
+    let userUid = UserDefaults.standard.string(forKey: "uid")
     func fetchData() {
-        db.collection("users").whereField("id", isEqualTo:UserDefaults.standard.string(forKey: "uid")).getDocuments { doucments, error in
+        db.collection("users").whereField("id", isEqualTo:userUid).getDocuments { doucments, error in
             
             if let error = error {
                 print("error!:\(error.localizedDescription)")
@@ -30,7 +30,7 @@ class userDetailsViewModel: ObservableObject{
                     let budget = document.data()["budget"] as? String
                     let available = document.data()["available"] as? String
                     let city = document.data()["city"] as? String
-                    let Gender = document.data()["Gender"] as? String
+                    let Gender = document.data()["Gender"] as? Int
                     let about = document.data()["about"] as? String
                     let interest = document.data()["interest"] as? String
                     let disrticts = document.data()["disrticts"] as? String
@@ -39,6 +39,7 @@ class userDetailsViewModel: ObservableObject{
                     let Conditions = document.data()["Conditions"] as? String
                     let showProfile = document.data()["showProfile"] as? Bool
                     let date = document.data()["date"] as? String
+                    let test = "Hello"
 
                     UserDefaults.standard.set(name, forKey: "name")
                     UserDefaults.standard.set(budget, forKey: "budget")
@@ -53,8 +54,13 @@ class userDetailsViewModel: ObservableObject{
                     UserDefaults.standard.set(showProfile, forKey: "showProfile")
                     UserDefaults.standard.set(date, forKey: "date")
                     UserDefaults.standard.set(RoomType, forKey: "RoomType")
-
+                    UserDefaults.standard.set(test, forKey: "test")
+                    
+                    
+                    let userData = UserDetails(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? 1, about: about ?? "", interest: interest ?? "", disrticts: disrticts ?? "", PeriodOfStay: PeriodOfStay ?? "", RoomType: RoomType ?? "", Conditions: Conditions ?? "", showProfile: showProfile ?? false)
                    
+                    print("all data saved \(userData)")
+
                 
                 }
                 

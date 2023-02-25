@@ -18,14 +18,18 @@ struct AccountView: View {
     @State var isPresent = false
     let Gender = UserDefaults.standard.string(forKey: "Gender") ?? "nil"
     let city = UserDefaults.standard.string(forKey: "city") ?? "nil"
+    let userdef = UserDefaults.standard.dictionaryRepresentation
 
-
+    func ResetDay() {
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+        print("\(key) = \(value) \n")
+        }
+//        print("Hi")
+        }
+    
     var body: some View {
             VStack{
-              
-
                 ZStack{
-                    
                     
                     Image("c")
                     
@@ -136,13 +140,15 @@ struct AccountView: View {
                         HStack{
                             NavigationLink(destination: HomeCard().navigationBarBackButtonHidden(true), isActive: $isPresent){}
                             Button {
-                                logIn.signOut()
-                                isPresent = true
+                                ResetDay()
+//                                logIn.signOut()
+//                                isPresent = true
                             } label: {
                                 Text("Log Out")
                                 Image(systemName: "chevron.right")
                                     .foregroundColor(.gray)
                                     .padding(.leading, 234)
+
                             }
                         }//hstack of list
                     }//zstack of logout
@@ -155,6 +161,7 @@ struct AccountView: View {
 }//strcut
 
 struct AccountView_Previews: PreviewProvider {
+    
     static var previews: some View {
         AccountView(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
     }
