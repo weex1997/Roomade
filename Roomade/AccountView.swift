@@ -9,9 +9,7 @@ import SwiftUI
 
 struct AccountView: View {
     var body: some View {
-        
-        NavigationView{
-            
+
             VStack{
                 ZStack{
                     
@@ -54,7 +52,7 @@ struct AccountView: View {
                             .frame(width:360, height: 65)
                         
                         NavigationLink {
-                            SubscribeView()
+                            informationView(userCard: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", avatar: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Al Malqa, Al yasmin, Al narjis", Budget:"", AvailableFrom:"Now", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
                         } label: {
                             Text("Information")
                                 .foregroundColor(.black)
@@ -127,8 +125,6 @@ struct AccountView: View {
                 }//vstack of list
                 .padding(.bottom, 200)
             }//vstack
-            
-        }//nav
     }//body
 }//strcut
 
