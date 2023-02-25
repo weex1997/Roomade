@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseFirestore
 
 struct HomeCard: View {
     
@@ -26,13 +29,14 @@ struct HomeCard: View {
 
     var body: some View {
         
-        NavigationView{
+
         ZStack{
             Color("Background")
                 .ignoresSafeArea()
             
                 VStack{
-                    if uid != nil {
+                    let user1 = Auth.auth().currentUser;
+                    if ((user1) != nil) {
 
                        //user is logged in
                         NavigationLink(destination: AccountView(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false )).navigationBarBackButtonHidden(false)){
@@ -112,11 +116,11 @@ struct HomeCard: View {
         }
     }
         
-    }
+
     
     var userCard : some View {
         
-        NavigationView{
+
             VStack{
                 ZStack{
                     Color("Background")
@@ -277,6 +281,7 @@ struct HomeCard: View {
                             
                             
                         }
+
                         // End of big VStack
                         
                     }

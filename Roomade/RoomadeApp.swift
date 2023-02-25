@@ -10,6 +10,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseMessaging
 import UserNotificationsUI
+import Firebase
+import FirebaseFirestore
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     var fcmRegTokenMessage: String = ""

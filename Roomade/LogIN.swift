@@ -179,23 +179,28 @@ struct LogIn: View {
                                         }
                                         print("signed in")
                                         
+                                      
                                         
+
                                         guard let user = authResult?.user else { return }
                                         let email = user.email ?? ""
-                                        let displayName = user.displayName ?? ""
+                                        //let displayName = user.displayName ?? ""
                                         guard let uid = Auth.auth().currentUser?.uid else { return }
-                                        let db = Firestore.firestore()
                                         
-                                        db.collection("users").document(uid).getDocument { (snapshot, error ) in
-                                            if  (snapshot?.exists)! {
-                                                SaveData = true
-                                            } else {
-                                                isActive = true
-                                            }
-                                        }
+                                        let userData = [
+                                            "id": uid,
+                                            "email": email,
+                                        ] as [String : Any]
+                                        
+                                        Firestore.firestore().collection("users").document(uid).setData(userData, merge: true)
+                                        
+                                        
                                         
                                         UserDefaults.standard.set(uid, forKey: "uid")
                                         UserDefaults.standard.set(email, forKey: "email")
+                                        print(uid)
+                                        fetchUser()
+
                                     }
                                     
                                     print("\(String(describing: Auth.auth().currentUser?.uid))")
@@ -225,11 +230,69 @@ struct LogIn: View {
                 //
                 //                }
                 .navigationBarTitle(Text("SING UP"))
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
             }
             
             
         }
     }
+    
+    func signOut() {
+        do{
+            try Auth.auth().signOut();
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
+        let user1 = Auth.auth().currentUser;
+        
+        if ((user1) != nil) {
+            // User is signed in.
+            print("User is signed in.")
+        } else {
+            // No user is signed in.
+            print("No user is signed in.")
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+            print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+        }
+        
+    }
+    
+    func fetchUser() {
+        let userUID = Auth.auth().currentUser?.uid
+        
+        Firestore.firestore().collection("users").document(userUID!).getDocument { snapshot, error in
+            if error != nil {
+                // ERROR
+            }
+            else {
+                print("get data")
+                let name = snapshot?.get("name")
+                let phoneNumber = snapshot?.get("phoneNumber")
+                let Birthdate = snapshot?.get("Birthdate")
+                let Gender = snapshot?.get("Gender")
+                
+                if (phoneNumber == nil){
+                    isActive = true
+
+                }
+                else{
+                    UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
+                    UserDefaults.standard.set(name, forKey: "name")
+                    UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
+                    UserDefaults.standard.set(Gender, forKey: "Gender")
+                    SaveData = true
+                    
+                }
+               
+            }
+        }
+    }
+    
+    
 }
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
