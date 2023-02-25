@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseFirestore
 
 struct HomeCard: View {
     
@@ -20,17 +23,20 @@ struct HomeCard: View {
     @State private var selection3 = "Gender"
     let gender = ["Gender", "Female", "Male"]
     
+    @State private var showImage = false
+    
     let uid = UserDefaults.standard.string(forKey: "uid") ?? nil
 
     var body: some View {
         
-        NavigationView{
+
         ZStack{
             Color("Background")
                 .ignoresSafeArea()
             
                 VStack{
-                    if uid != nil {
+                    let user1 = Auth.auth().currentUser;
+                    if ((user1) != nil) {
 
                        //user is logged in
                         NavigationLink(destination: AccountView(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false )).navigationBarBackButtonHidden(false)){
@@ -61,7 +67,7 @@ struct HomeCard: View {
                                         Text($0)
                                     }
                                 }.pickerStyle(.automatic)
-                            }//.padding()
+                            }
                         }.padding(.leading, 170)
                         
                         //Budget filter
@@ -79,6 +85,7 @@ struct HomeCard: View {
                             }.padding(.trailing, 230)
                                 .padding(.leading, 16)
                         }
+                        // Gender filter
 //                        VStack{
 //                            ZStack{
 //
@@ -94,25 +101,26 @@ struct HomeCard: View {
 //                                .padding(.leading, 16)
 //                        }
                         
-                        // Gender filter
+                        
+                    }
+                    NavigationLink(destination: UserInfo().navigationBarBackButtonHidden(false)){
+                        
+                        userCard
+                            .onAppear(){
+                                self.viewModel.fetchData()
+                            }
                     }
                     
-                    userCard
-                        .onAppear(){
-                            self.viewModel.fetchData()
-                        }
                 }
             
         }
     }
         
-    }
-    
 
     
     var userCard : some View {
         
-        NavigationView{
+
             VStack{
                 ZStack{
                     Color("Background")
@@ -129,12 +137,14 @@ struct HomeCard: View {
                                     
                                     VStack{
                                         ZStack{
+                                                
+                                                RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                                    .fill(.white)
+                                                    .frame(width: 358,height: 173)
                                             
-                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                                .fill(.white)
-                                                .frame(width: 358,height: 173)
                                             VStack{
                                                 HStack{
+                                                    // Gender condition
                                                     ZStack{
                                                         if (user.Gender == "1") {
                                                             RoundedRectangle(cornerRadius: 15, style: .continuous)
@@ -153,18 +163,17 @@ struct HomeCard: View {
                                                         if (user.Gender == "1") {
                                                             Image("0")
                                                         }
-                                                            else {
-                                                                
-                                                                Image("2")
-                                                            }
-                                                            //                                                        if SingUP(Gender: 1)
-                                                            // Gender photo
-                                                        
+                                                        else {
+                                                            
+                                                            Image("2")
+                                                        }
                                                         
                                                     }
                                                     VStack{
                                                         Text(user.name)
                                                             .font(.system(size: 20))
+                                                            .foregroundColor(.black)
+
                                                             .lineLimit(1)
                                                             .minimumScaleFactor(0.8)
                                                         Text(user.city)
@@ -181,8 +190,45 @@ struct HomeCard: View {
                                                         .font(.system(size: 22))
                                                         .padding(.bottom, 25)
                                                         .padding(.trailing, 18 )
-                                                        .foregroundColor(.gray)
-                                                    
+                                                        .foregroundColor(Color("Pink1"))
+//
+//                                                    ZStack{
+//
+//
+//
+//                                                                Button(action: { showImage.toggle() }) {
+//
+//                                                                    Image(systemName: "heart")
+//
+//                                                                        .foregroundColor(.red)
+//
+//                                                                        .font(.system(size: 24))
+//
+//                                                                        .aspectRatio(contentMode: .fill).frame(width: 75, height: 75)
+//
+//                                                                }
+//
+//
+//
+//                                                                if showImage {
+//
+//                                                                    Image(systemName: "heart.fill")
+//
+//                                                                        .foregroundColor(.red)
+//
+//                                                                        .font(.system(size: 24))
+//
+//                                                                        .aspectRatio(contentMode: .fill).frame(width: 75, height: 75)
+//
+//
+//
+//                                                                }
+//
+//
+//
+//
+//
+//                                                            }
                                                 }.padding(.bottom, 20)
                                                 
                                                 
@@ -198,6 +244,7 @@ struct HomeCard: View {
                                                     
                                                     VStack{
                                                         Text("Budget")
+                                                            .foregroundColor(.black)
                                                             .font(.system(size: 15))
                                                             .padding(.trailing,2)
                                                         Text(user.budget)
@@ -216,6 +263,7 @@ struct HomeCard: View {
                                                     
                                                     VStack{
                                                         Text("Available")
+                                                            .foregroundColor(.black)
                                                             .font(.system(size: 15))
                                                         Text(user.available)
                                                             .font(.system(size: 15))
@@ -231,7 +279,9 @@ struct HomeCard: View {
                                 }.padding(.top, 10)
                             }
                             
+                            
                         }
+
                         // End of big VStack
                         
                     }

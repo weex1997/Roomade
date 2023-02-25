@@ -22,6 +22,7 @@
 		A8657B6929A7BD88006C4BB2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657B6829A7BD88006C4BB2 /* UserViewModel.swift */; };
 		A877CF6E29A8EC3E00DD3161 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A877CF6D29A8EC3E00DD3161 /* ProfileCard.swift */; };
 		A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F78202994DFB300D3D109 /* HomeCard.swift */; };
+		A898C60E29AA312B00EC1815 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C60D29AA312B00EC1815 /* UserInfo.swift */; };
 		FC039C7B299B927700D72F06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC039C7A299B927700D72F06 /* GoogleService-Info.plist */; };
 		FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */; };
 		FC0879C029A28A21001C8806 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC0879BF29A28A21001C8806 /* FirebaseAuth */; };
@@ -54,6 +55,7 @@
 		A8657B6829A7BD88006C4BB2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		A877CF6D29A8EC3E00DD3161 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		A88F78202994DFB300D3D109 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
+		A898C60D29AA312B00EC1815 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		FC039C7A299B927700D72F06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		FC0879A4299FC377001C8806 /* Roomade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roomade.entitlements; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				FC0879A1299CD599001C8806 /* ViewModel */,
 				21D109A62998E762006C38D7 /* AccountView.swift */,
 				21D109A8299B61C1006C38D7 /* SubscribeView.swift */,
+				A898C60D29AA312B00EC1815 /* UserInfo.swift */,
 				21D109AF299D43EB006C38D7 /* StoreKitManager.swift */,
 				21D109AD299D42CD006C38D7 /* ProductList.plist */,
 				FCEBA6462994C87B003FB295 /* Assets.xcassets */,
@@ -251,6 +254,7 @@
 				21D109A9299B61C1006C38D7 /* SubscribeView.swift in Sources */,
 				4E5F50F829A974950006F391 /* informationView.swift in Sources */,
 				5656F9FD29A4B5B700B22043 /* Logo.swift in Sources */,
+				A898C60E29AA312B00EC1815 /* UserInfo.swift in Sources */,
 				21D109B0299D43EB006C38D7 /* StoreKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +400,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.4D.Roomade-Hajar";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.4D.Roomade-sumaya";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -431,7 +435,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.4D.Roomade-Hajar";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.4D.Roomade-sumaya";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
