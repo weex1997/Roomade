@@ -23,28 +23,10 @@ struct GrowingButton: ButtonStyle {
     }
 }
 
-struct UserCard{
-    
-    var name : String
-    var city : String
-    var budget : String
-    var available : String
-    var avatar : Int
-    var about : String
-    var interest : String
-    var disrticts : String
-    var Budget : String
-    var AvailableFrom : String
-    var PeriodOfStay : String
-    var RoomType : String
-    var Conditions : String
-    var showProfile : Bool
-    var date = Date()
-}
 
 
 struct informationView: View {
-    @State var userCard : UserCard
+    @State var userDetails : UserDetails
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -52,21 +34,26 @@ struct informationView: View {
             ZStack{
                 Image("c")
                     .frame(width: 385,height: 244)
-
+                
                 VStack{
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.white)
                             .frame(width: 80,height: 80)
                         
-                        Image("avatar")
-                    }//zstack
+                        if (userDetails.Gender == 1) {
+                            Image("0")
+                        }
+                        else {
+                            
+                            Image("2")
+                        }                    }//zstack
                     VStack{
-                        Text(userCard.name)
+                        Text(userDetails.name)
                             .font(.title2)
                             .foregroundColor(.white)
                         
-                        Text(userCard.city)
+                        Text(userDetails.city)
                             .font(.footnote)
                             .foregroundColor(.white)
                     }
@@ -74,7 +61,7 @@ struct informationView: View {
                     HStack{
                         
                         ZStack{
-                            RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color("UserCard"))
+                            RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color("userDetails"))
                                 .frame(width: 152,height: 62)
                                 .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                             RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -86,8 +73,8 @@ struct informationView: View {
                                             .fontWeight(Font.Weight.semibold)
                                             .font(.system(size: 14))
                                             .lineLimit(1)
-
-                                        Text(userCard.budget)
+                                        
+                                        Text(userDetails.budget)
                                             .font(.system(size: 14))
                                             .foregroundColor(.gray)
                                             .padding(.bottom, 10)
@@ -101,7 +88,7 @@ struct informationView: View {
                             .frame(width: 152,height: 62)
                         }
                         ZStack{
-                            RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("UserCard"))
+                            RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("userDetails"))
                                 .frame(width: 152,height: 62)
                                 .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                             RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -113,13 +100,13 @@ struct informationView: View {
                                             .fontWeight(Font.Weight.semibold)
                                             .font(.system(size: 14))
                                             .lineLimit(1)
-
-                                        Text(userCard.available)
+                                        
+                                        Text(userDetails.available)
                                             .font(.system(size: 14))
                                             .foregroundColor(.gray)
                                             .padding(.bottom, 10)
                                             .lineLimit(1)
-
+                                        
                                         
                                     }.padding(.trailing,120 )
                                     // End of About Me
@@ -144,7 +131,7 @@ struct informationView: View {
             
             ZStack{
                 
-                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("UserCard"))
+                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("userDetails"))
                     .frame(width: 358,height: 139)
                     .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                 RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -155,7 +142,7 @@ struct informationView: View {
                             Text("About Me")
                                 .font(.system(size: 20))
                                 .minimumScaleFactor(0.8)
-                            Text(userCard.about)
+                            Text(userDetails.about)
                                 .font(.system(size: 15))
                                 .foregroundColor(.gray)
                                 .padding(.bottom, 10)
@@ -171,7 +158,7 @@ struct informationView: View {
             }
             
             ZStack{
-                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("UserCard"))
+                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("userDetails"))
                     .frame(width: 358,height: 63)
                     .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                 RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -183,12 +170,12 @@ struct informationView: View {
                                 .font(.system(size: 20))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.8)
-                            Text(userCard.disrticts)
+                            Text(userDetails.disrticts)
                                 .font(.system(size: 15))
                                 .foregroundColor(.gray)
                                 .padding(.bottom, 10)
                                 .multilineTextAlignment(.center)
-//                                .minimumScaleFactor(0.8)
+                            //                                .minimumScaleFactor(0.8)
                             
                             
                         }.padding(.trailing,120 )
@@ -197,10 +184,10 @@ struct informationView: View {
                     
                 }
                 .frame(width: 358,height: 63)
-
+                
             }
             ZStack{
-                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("UserCard"))
+                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("userDetails"))
                     .frame(width: 358,height: 63)
                     .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                 RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -212,12 +199,12 @@ struct informationView: View {
                                 .font(.system(size: 20))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.8)
-                            Text(userCard.PeriodOfStay)
+                            Text(userDetails.PeriodOfStay)
                                 .font(.system(size: 15))
                                 .foregroundColor(.gray)
                                 .padding(.bottom, 10)
                                 .multilineTextAlignment(.center)
-//                                .minimumScaleFactor(0.8)
+                            //                                .minimumScaleFactor(0.8)
                             
                             
                         }.padding(.trailing,120 )
@@ -226,7 +213,7 @@ struct informationView: View {
                 }
             }
             ZStack{
-                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("UserCard"))
+                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("userDetails"))
                     .frame(width: 358,height: 63)
                     .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                 RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -237,13 +224,13 @@ struct informationView: View {
                             Text("Room Type")
                                 .font(.system(size: 20))
                                 .lineLimit(1)
-//                                .minimumScaleFactor(0.8)
-                            Text(userCard.RoomType)
+                            //                                .minimumScaleFactor(0.8)
+                            Text(userDetails.RoomType)
                                 .font(.system(size: 15))
                                 .foregroundColor(.gray)
                                 .padding(.bottom, 10)
                                 .lineLimit(1)
-//                                .minimumScaleFactor(0.8)
+                            //                                .minimumScaleFactor(0.8)
                             
                             
                         }.padding(.trailing,120 )
@@ -253,7 +240,7 @@ struct informationView: View {
                 }
             }
             ZStack{
-                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("UserCard"))
+                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("userDetails"))
                     .frame(width: 358,height: 63)
                     .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                 RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -264,13 +251,13 @@ struct informationView: View {
                             Text("Interest")
                                 .font(.system(size: 20))
                                 .lineLimit(1)
-//                                .minimumScaleFactor(0.8)
-                            Text(userCard.interest)
+                            //                                .minimumScaleFactor(0.8)
+                            Text(userDetails.interest)
                                 .font(.system(size: 15))
                                 .foregroundColor(.gray)
                                 .padding(.bottom, 10)
                                 .lineLimit(1)
-//                                .minimumScaleFactor(0.8)
+                            //                                .minimumScaleFactor(0.8)
                             
                             
                         }.padding(.trailing,120 )
@@ -280,7 +267,7 @@ struct informationView: View {
                 }
             }
             ZStack{
-                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("UserCard"))
+                RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color("userDetails"))
                     .frame(width: 358,height: 139)
                     .blur(radius: /*@START_MENU_TOKEN@*/52.0/*@END_MENU_TOKEN@*/)
                 RoundedRectangle(cornerRadius: 15, style: .continuous).fill(.white)
@@ -290,14 +277,14 @@ struct informationView: View {
                         VStack{
                             Text("Conditions")
                                 .font(.system(size: 20))
-//                                .minimumScaleFactor(0.8)
-                            Text(userCard.Conditions)
+                            //                                .minimumScaleFactor(0.8)
+                            Text(userDetails.Conditions)
                                 .font(.system(size: 15))
                                 .foregroundColor(.gray)
                                 .padding(.bottom, 10)
-//                                .minimumScaleFactor(0.8)
+                            //                                .minimumScaleFactor(0.8)
                                 .multilineTextAlignment(.center)
-
+                            
                             
                             
                         }.padding(.trailing,120 )
@@ -324,7 +311,7 @@ struct informationView: View {
 
 struct informationView_Previews: PreviewProvider {
     static var previews: some View {
-        informationView(userCard: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", avatar: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", Budget:"", AvailableFrom:"Now", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
+        informationView(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
         
     }
 }

@@ -14,8 +14,7 @@ struct informationPage: View {
     @State var interest = ""
     @State var city = ""
     @State var disrticts = ""
-    @State var Budget = ""
-    @State var AvailableFrom = ""
+    @State var budget = ""
     @State var PeriodOfStay = ""
     @State var RoomType = ""
     @State var Conditions = "Here are space to write you conditions .."
@@ -111,7 +110,7 @@ struct informationPage: View {
                 .padding(.bottom,3)
                 .padding(.leading,16)
                 HStack{
-                    TextField("Your budget per month", text: $Budget)
+                    TextField("Your budget per month", text: $budget)
                         .padding(14)
                         .font(.system(size: 16))
                         .frame(width: 358,height: 43)
@@ -224,17 +223,17 @@ struct informationPage: View {
                     .background(Color("BlueColor"))
                     .cornerRadius(10)
                 }
-            }
         }.navigationBarTitle("Information", displayMode: .inline)
-            .toolbar{
-                ToolbarItemGroup(placement: .navigationBarTrailing){
-                    NavigationLink(
-                        destination: AccountView(),
-                        label: {
-                            Text("Skip")
-                        })
-                }
-            }
+//            .toolbar{
+//                ToolbarItemGroup(placement: .navigationBarTrailing){
+//                    NavigationLink(
+//                        destination: AccountView(),
+//                        label: {
+//                            Text("Skip")
+//                        })
+//                }
+//            }
+    }
     }
     
 }
