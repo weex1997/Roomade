@@ -13,9 +13,7 @@ struct ProfileCard: View {
 
     var body: some View {
         //Profile card
-  
-        
-            
+
             VStack{
                 
                
