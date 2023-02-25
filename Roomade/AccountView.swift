@@ -16,13 +16,14 @@ struct AccountView: View {
     let name = UserDefaults.standard.string(forKey: "name") ?? "nil"
     @State var logIn = LogIn()
     @State var isPresent = false
-    let Gender = UserDefaults.standard.integer(forKey: "Gender") 
+    let Gender = UserDefaults.standard.string(forKey: "Gender") ?? "nil"
     let city = UserDefaults.standard.string(forKey: "city") ?? "nil"
 
 
     var body: some View {
-
             VStack{
+              
+
                 ZStack{
                     
                     
@@ -35,11 +36,11 @@ struct AccountView: View {
                                 .fill(.white)
                                 .frame(width: 80,height: 80)
                             
-                            if (Gender == 1) {
+                          
+                            if (Gender == "1") {
                                 Image("0")
                             }
                             else {
-                                
                                 Image("2")
                             }
                         }//zstack
@@ -158,3 +159,5 @@ struct AccountView_Previews: PreviewProvider {
         AccountView(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
     }
 }
+
+
