@@ -20,6 +20,8 @@ struct HomeCard: View {
     @State private var selection3 = "Gender"
     let gender = ["Gender", "Female", "Male"]
     
+    @State private var showImage = false
+    
     let uid = UserDefaults.standard.string(forKey: "uid") ?? nil
 
     var body: some View {
@@ -97,11 +99,14 @@ struct HomeCard: View {
                         
                         
                     }
+                    NavigationLink(destination: UserInfo().navigationBarBackButtonHidden(false)){
+                        
+                        userCard
+                            .onAppear(){
+                                self.viewModel.fetchData()
+                            }
+                    }
                     
-                    userCard
-                        .onAppear(){
-                            self.viewModel.fetchData()
-                        }
                 }
             
         }
@@ -128,10 +133,11 @@ struct HomeCard: View {
                                     
                                     VStack{
                                         ZStack{
+                                                
+                                                RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                                    .fill(.white)
+                                                    .frame(width: 358,height: 173)
                                             
-                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                                .fill(.white)
-                                                .frame(width: 358,height: 173)
                                             VStack{
                                                 HStack{
                                                     // Gender condition
@@ -153,15 +159,17 @@ struct HomeCard: View {
                                                         if (user.Gender == "1") {
                                                             Image("0")
                                                         }
-                                                            else {
-                                                                
-                                                                Image("2")
-                                                            }
-                                                           
+                                                        else {
+                                                            
+                                                            Image("2")
+                                                        }
+                                                        
                                                     }
                                                     VStack{
                                                         Text(user.name)
                                                             .font(.system(size: 20))
+                                                            .foregroundColor(.black)
+
                                                             .lineLimit(1)
                                                             .minimumScaleFactor(0.8)
                                                         Text(user.city)
@@ -178,8 +186,45 @@ struct HomeCard: View {
                                                         .font(.system(size: 22))
                                                         .padding(.bottom, 25)
                                                         .padding(.trailing, 18 )
-                                                        .foregroundColor(.gray)
-                                                    
+                                                        .foregroundColor(Color("Pink1"))
+//
+//                                                    ZStack{
+//
+//
+//
+//                                                                Button(action: { showImage.toggle() }) {
+//
+//                                                                    Image(systemName: "heart")
+//
+//                                                                        .foregroundColor(.red)
+//
+//                                                                        .font(.system(size: 24))
+//
+//                                                                        .aspectRatio(contentMode: .fill).frame(width: 75, height: 75)
+//
+//                                                                }
+//
+//
+//
+//                                                                if showImage {
+//
+//                                                                    Image(systemName: "heart.fill")
+//
+//                                                                        .foregroundColor(.red)
+//
+//                                                                        .font(.system(size: 24))
+//
+//                                                                        .aspectRatio(contentMode: .fill).frame(width: 75, height: 75)
+//
+//
+//
+//                                                                }
+//
+//
+//
+//
+//
+//                                                            }
                                                 }.padding(.bottom, 20)
                                                 
                                                 
@@ -195,6 +240,7 @@ struct HomeCard: View {
                                                     
                                                     VStack{
                                                         Text("Budget")
+                                                            .foregroundColor(.black)
                                                             .font(.system(size: 15))
                                                             .padding(.trailing,2)
                                                         Text(user.budget)
@@ -213,6 +259,7 @@ struct HomeCard: View {
                                                     
                                                     VStack{
                                                         Text("Available")
+                                                            .foregroundColor(.black)
                                                             .font(.system(size: 15))
                                                         Text(user.available)
                                                             .font(.system(size: 15))
@@ -227,6 +274,7 @@ struct HomeCard: View {
                                     
                                 }.padding(.top, 10)
                             }
+                            
                             
                         }
                         // End of big VStack

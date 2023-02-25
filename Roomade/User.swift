@@ -15,4 +15,5 @@ struct User: Identifiable {
     var budget: String
     var available: String
     var Gender: String
+    var phoneNumber: String
 }
