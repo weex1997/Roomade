@@ -51,7 +51,7 @@ struct SubscribeView: View {
             //                            .padding(.trailing, 8)
             
             
-            List{
+         //   List{
                 ForEach(storeKit.storeProducts) { product in
                     HStack{
                         ZStack{
@@ -60,10 +60,10 @@ struct SubscribeView: View {
                                 .frame(width: 80, height: 50)
                             // .padding(.trailing, )
                             HStack{
-                                Text("6")
-                                    .fontWeight(.semibold)
-                                // .padding(.trailing, 1)
-                                    .foregroundColor(Color("Dgray"))
+//                                Text("")
+//                                    .fontWeight(.semibold)
+//                                // .padding(.trailing, 1)
+//                                    .foregroundColor(Color("Dgray"))
                                 Image(systemName: "person.fill")
                                     .foregroundColor(Color("Blue1"))
                                     .font(.system(size: 20))
@@ -85,7 +85,7 @@ struct SubscribeView: View {
                         }) {
                             CourseItem(storeKit: storeKit, product: product)
                             
-                        }
+                        }.padding(.trailing, 20)
                         
                         
                         
@@ -109,7 +109,7 @@ struct SubscribeView: View {
                 //                        .padding(.trailing, 20)
                 //
                 //                }
-            }//.scrollContentBackground(.hidden)
+            //}//.scrollContentBackground(.hidden)
             
             //                        Text("")
             //
@@ -150,13 +150,15 @@ struct SubscribeView: View {
             
             
             Divider()
+                .padding(.top, 10)
+            
             Button("Restore Purchases", action: {
                 Task {
                     //This call displays a system prompt that asks users to authenticate with their App Store credentials.
                     //Call this function only in response to an explicit user action, such as tapping a button.
                     try? await AppStore.sync()
                 }
-            })
+            }).padding(.top, 30)
             
             
             

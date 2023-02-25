@@ -19,7 +19,7 @@ struct SingUP: View {
     @State var phoneNumber = ""
     @State var name = ""
     @State private var Birthdate = Date.now
-    @State private var Gender = 1
+    @State private var Gender = ""
     let uid = UserDefaults.standard.string(forKey: "uid") ?? "nil"
     let email = UserDefaults.standard.string(forKey: "email") ?? "nil"
     
@@ -92,8 +92,8 @@ struct SingUP: View {
                 .padding(.leading,16)
                 HStack{
                     Picker("Gender", selection: $Gender) {
-                        Text("Male").tag(0)
-                        Text("Famel").tag(1)
+                        Text("Male").tag("0")
+                        Text("Famel").tag("1")
                     }
                     .padding(.leading,-175)
                     .font(.system(size: 16))

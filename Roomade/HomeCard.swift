@@ -293,7 +293,7 @@ struct HomeCard: View {
     } // End of cardView
     
     
-} // End of big View
+ // End of big View
 
 struct HomeCard_Previews: PreviewProvider {
     static var previews: some View {

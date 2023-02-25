@@ -39,15 +39,14 @@ struct UserInfo: View {
                                 Image("1")
                                 
                             }//zstack
-                            ForEach(viewModel.users, id: \.id) { user in
                                 
-                                Text(user.name)
+                                Text("Ssra")
                             
                                 .font(.title2)
                             
                                 .foregroundColor(.white)
                             
-                                Text(user.city)
+                                Text("jjjj")
                             
                                 .font(.footnote)
                             
@@ -78,7 +77,7 @@ struct UserInfo: View {
                                             
                                             Text("Budget")
                                             
-                                            Text(user.budget)
+                                            Text("99")
                                                 .foregroundColor(.gray)
                                             
                                             
@@ -130,7 +129,7 @@ struct UserInfo: View {
                                 
                             }
                             
-                        }//vstack
+                        //vstack
                         
                     }//bigzstack
                     

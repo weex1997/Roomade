@@ -67,10 +67,8 @@ struct LogIn: View {
     var body: some View {
         NavigationView {
             VStack{
-                NavigationLink(destination: HomeCard(),isActive: $SaveData) {
-                }
-                NavigationLink(destination: SingUP(),isActive: $isActive) {
-                }
+                NavigationLink(destination: SingUP().navigationBarBackButtonHidden(true), isActive: $isActive){}
+                NavigationLink(destination: HomeCard().navigationBarBackButtonHidden(true), isActive: $SaveData){}
                 //                HStack(){
                 //                    Text("Phone Number")
                 //                        .foregroundColor(Color("DarkGaryColor"))
@@ -284,6 +282,7 @@ struct LogIn: View {
                     UserDefaults.standard.set(name, forKey: "name")
                     UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
                     UserDefaults.standard.set(Gender, forKey: "Gender")
+                    
                     SaveData = true
                     
                 }
