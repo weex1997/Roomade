@@ -16,4 +16,11 @@ struct User: Identifiable {
     var available: String
     var Gender: String
     var phoneNumber: String
+    var about : String
+    var interest : String
+    var disrticts : String
+    var PeriodOfStay : String
+    var RoomType : String
+    var Conditions : String
+    var showProfile : Bool
 }

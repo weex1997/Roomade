@@ -14,7 +14,7 @@ struct UserDetails: Identifiable {
     var city : String
     var budget : String
     var available : String
-    var Gender : Int
+    var Gender : String
     var about : String
     var interest : String
     var disrticts : String
@@ -22,5 +22,4 @@ struct UserDetails: Identifiable {
     var RoomType : String
     var Conditions : String
     var showProfile : Bool
-    var date = Date()
 }

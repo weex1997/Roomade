@@ -30,7 +30,7 @@ class userDetailsViewModel: ObservableObject{
                     let budget = document.data()["budget"] as? String
                     let available = document.data()["available"] as? String
                     let city = document.data()["city"] as? String
-                    let Gender = document.data()["Gender"] as? Int
+                    let Gender = document.data()["Gender"] as? String
                     let about = document.data()["about"] as? String
                     let interest = document.data()["interest"] as? String
                     let disrticts = document.data()["disrticts"] as? String
@@ -57,7 +57,7 @@ class userDetailsViewModel: ObservableObject{
                     UserDefaults.standard.set(test, forKey: "test")
                     
                     
-                    let userData = UserDetails(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? 1, about: about ?? "", interest: interest ?? "", disrticts: disrticts ?? "", PeriodOfStay: PeriodOfStay ?? "", RoomType: RoomType ?? "", Conditions: Conditions ?? "", showProfile: showProfile ?? false)
+                    let userData = UserDetails(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? "1", about: about ?? "", interest: interest ?? "", disrticts: disrticts ?? "", PeriodOfStay: PeriodOfStay ?? "", RoomType: RoomType ?? "", Conditions: Conditions ?? "", showProfile: showProfile ?? false)
                    
                     print("all data saved \(userData)")
 

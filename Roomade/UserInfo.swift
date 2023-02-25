@@ -77,7 +77,7 @@ struct UserInfo: View {
                                             
                                             Text("Budget")
                                             
-                                            Text("99")
+                                            Text(userDetails.budget)
                                                 .foregroundColor(.gray)
                                             
                                             
@@ -114,7 +114,7 @@ struct UserInfo: View {
                                             
                                             Text("Available")
                                             
-                                            Text("Now")
+                                            Text(userDetails.available)
                                                 .foregroundColor(.gray)
                                             
                                             
@@ -182,7 +182,7 @@ struct UserInfo: View {
                                     
                                         .padding(.bottom, 3)
                                     
-                                    Text("My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity")
+                                    Text(userDetails.about)
                                     
                                         .foregroundColor(Color("Dg"))
                                     
@@ -238,7 +238,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text("Riyadh")
+                                        Text(userDetails.city)
                                         
                                             .foregroundColor(Color("Dg"))
                                         
@@ -288,7 +288,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text("Al Malqa, Al yasmin, Al narjis")
+                                        Text(userDetails.disrticts)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -344,7 +344,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text("9 - 12 months")
+                                        Text(userDetails.PeriodOfStay)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -404,7 +404,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text("Single room")
+                                        Text(userDetails.RoomType)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -462,7 +462,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text("Cooking, art, and music")
+                                        Text(userDetails.interest)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -506,7 +506,7 @@ struct UserInfo: View {
                                     
                                         .padding(.bottom, 3)
                                     
-                                    Text("My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity")
+                                    Text(userDetails.Conditions)
                                     
                                         .foregroundColor(Color("Dg"))
                                     
@@ -593,7 +593,7 @@ struct UserInfo_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        UserInfo(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
+        UserInfo(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: "1", about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false ))
         
     }
     
