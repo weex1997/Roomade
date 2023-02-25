@@ -197,7 +197,7 @@ struct LogIn: View {
                                         UserDefaults.standard.set(uid, forKey: "uid")
                                         UserDefaults.standard.set(email, forKey: "email")
                                         print(uid)
-                                        fetchUser()
+                                        getDocument()
 
                                     }
                                     
@@ -291,7 +291,40 @@ struct LogIn: View {
         }
     }
     
-    
+    private func getDocument() {
+            //Get specific document from current user
+            let docRef = Firestore.firestore()
+                .collection("users")
+                .document(Auth.auth().currentUser?.uid ?? "")
+
+            // Get data
+            docRef.getDocument { (document, error) in
+                guard let document = document, document.exists else {
+                    print("Document does not exist")
+                    return
+                }
+                let dataDescription = document.data()
+                let name = dataDescription?["name"] ?? ""
+                let phoneNumber = dataDescription?["phoneNumber"] ?? ""
+                let Birthdate = dataDescription?["Birthdate"] ?? ""
+                let Gender = dataDescription?["Gender"] ?? ""
+                print(dataDescription?["name"] ?? "")
+                
+                if (phoneNumber == nil){
+                    isActive = true
+
+                }
+                else{
+                    UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
+                    UserDefaults.standard.set(name, forKey: "name")
+                    UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
+                    UserDefaults.standard.set(Gender, forKey: "Gender")
+                    
+                    SaveData = true
+                    
+                }
+            }
+        }
 }
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
