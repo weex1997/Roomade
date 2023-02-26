@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
+import FirebaseFirestore
 
 struct informationPage: View {
     
@@ -200,7 +203,7 @@ struct informationPage: View {
                 .padding(.bottom,3)
                 .padding(.leading,16)
                 HStack{
-                    TextEditor(text: $about)
+                    TextEditor(text: $Conditions)
                         .opacity(0.3)
                         .padding(14)
                         .font(.system(size: 16))
@@ -216,6 +219,22 @@ struct informationPage: View {
                 }.padding()
                 HStack{
                     Button("save") {
+                        let db = Firestore.firestore()
+                        let userUID = Auth.auth().currentUser?.uid
+
+                        db.collection("users").document(userUID!).setData([
+                            "about": about,
+                            "interest" : interest,
+                            "city" : city,
+                            "disrticts" : disrticts,
+                            "budget" : budget,
+                            "PeriodOfStay" : PeriodOfStay,
+                            "RoomType" : RoomType,
+                            "Conditions" : Conditions,
+                            "showProfile" : showProfile,
+                            "AvailableFrom" : Date()], merge: true)
+                        
+                       
                     }
                     .foregroundColor(Color.white)
                     .font(.system(size: 18,weight: .semibold))
