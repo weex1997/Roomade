@@ -310,7 +310,7 @@ struct LogIn: View {
                 let Gender = dataDescription?["Gender"] ?? ""
                 print(dataDescription?["name"] ?? "")
                 
-                if (phoneNumber == nil){
+                if (phoneNumber as! String == ""){
                     isActive = true
 
                 }

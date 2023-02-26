@@ -28,7 +28,7 @@ struct SingUP: View {
 
             
             VStack{
-                NavigationLink(destination: Verification(),isActive: $SaveData) {
+                NavigationLink(destination: informationPage(),isActive: $SaveData) {
                 }
                 HStack(){
                     Text("Name")
@@ -131,6 +131,7 @@ struct SingUP: View {
                         UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
                         UserDefaults.standard.set(Gender, forKey: "Gender")
                         
+                        SaveData = true
                     } label: {
                         Text("Next")
                             .foregroundColor(Color.white)

@@ -235,7 +235,7 @@ struct informationPage: View {
                             "showProfile" : showProfile,
                             "AvailableFrom" : Date()], merge: true)
 //                        logIn.signOut()
-                        
+                                                
                        
                     }
                     .foregroundColor(Color.white)
@@ -245,15 +245,15 @@ struct informationPage: View {
                     .cornerRadius(10)
                 }
         }.navigationBarTitle("Information", displayMode: .inline)
-//            .toolbar{
-//                ToolbarItemGroup(placement: .navigationBarTrailing){
-//                    NavigationLink(
-//                        destination: AccountView(),
-//                        label: {
-//                            Text("Skip")
-//                        })
-//                }
-//            }
+                        .toolbar{
+                            ToolbarItemGroup(placement: .navigationBarTrailing){
+                                Button(action: {
+                                }, label: {
+                                    NavigationLink(destination: HomeCard()) {
+                                         Text("Skip")
+                                     }
+                                })                            }
+                        }
     }
     }
     
