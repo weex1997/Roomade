@@ -29,6 +29,7 @@
 		FC0879C229A28A21001C8806 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC0879C129A28A21001C8806 /* FirebaseFirestore */; };
 		FC0879C429A28A21001C8806 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FC0879C329A28A21001C8806 /* FirebaseFirestoreSwift */; };
 		FC0879C629A28A21001C8806 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FC0879C529A28A21001C8806 /* FirebaseMessaging */; };
+		FC3D21A829AB3D2300A7EAC8 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3D21A729AB3D2300A7EAC8 /* userProfile.swift */; };
 		FC9EA69A299A211700186387 /* SingUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA699299A211700186387 /* SingUP.swift */; };
 		FC9EA69C299A29BE00186387 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69B299A29BE00186387 /* Verification.swift */; };
 		FC9EA69E299B837B00186387 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA69D299B837B00186387 /* CountdownView.swift */; };
@@ -60,6 +61,7 @@
 		FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		FC0879A4299FC377001C8806 /* Roomade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roomade.entitlements; sourceTree = "<group>"; };
 		FC0879A5299FC380001C8806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FC3D21A729AB3D2300A7EAC8 /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
 		FC9EA699299A211700186387 /* SingUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUP.swift; sourceTree = "<group>"; };
 		FC9EA69B299A29BE00186387 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		FC9EA69D299B837B00186387 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				21D109A62998E762006C38D7 /* AccountView.swift */,
 				21D109A8299B61C1006C38D7 /* SubscribeView.swift */,
 				A898C60D29AA312B00EC1815 /* UserInfo.swift */,
+				FC3D21A729AB3D2300A7EAC8 /* userProfile.swift */,
 				21D109AF299D43EB006C38D7 /* StoreKitManager.swift */,
 				21D109AD299D42CD006C38D7 /* ProductList.plist */,
 				FCEBA6462994C87B003FB295 /* Assets.xcassets */,
@@ -239,6 +242,7 @@
 				FC9EA69C299A29BE00186387 /* Verification.swift in Sources */,
 				4E5F50FE29A993BB0006F391 /* userDetailsViewModel.swift in Sources */,
 				A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */,
+				FC3D21A829AB3D2300A7EAC8 /* userProfile.swift in Sources */,
 				5656F9FB29A4B5A300B22043 /* Splash.swift in Sources */,
 				21D109A72998E762006C38D7 /* AccountView.swift in Sources */,
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
@@ -385,7 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roomade/Preview Content\"";
-				DEVELOPMENT_TEAM = TT2Y4HLN9M;
+				DEVELOPMENT_TEAM = CHXYY877GH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Roomade/Info.plist;
@@ -400,7 +404,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.4D.Roomade-hajero";
+				PRODUCT_BUNDLE_IDENTIFIER = com.4D.Roomade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -420,7 +424,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roomade/Preview Content\"";
-				DEVELOPMENT_TEAM = TT2Y4HLN9M;
+				DEVELOPMENT_TEAM = CHXYY877GH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Roomade/Info.plist;
@@ -435,7 +439,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.4D.Roomade-hajero";
+				PRODUCT_BUNDLE_IDENTIFIER = com.4D.Roomade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

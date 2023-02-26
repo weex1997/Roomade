@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 struct ProfileCard: View {
     let name = UserDefaults.standard.string(forKey: "name") ?? "nil"
+    @StateObject var viewModel = userViewModel()
 
     var body: some View {
         //Profile card
@@ -39,7 +40,6 @@ struct ProfileCard: View {
                                     .font(.system(size: 17))
                                 
                                 let user1 = Auth.auth().currentUser;
-
                                 if ((user1) != nil) {
                                    //user is logged in
                                     Text(name)

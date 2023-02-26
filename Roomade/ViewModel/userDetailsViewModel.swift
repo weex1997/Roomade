@@ -15,6 +15,57 @@ class userDetailsViewModel: ObservableObject{
     
     private var db = Firestore.firestore()
     let userUid = UserDefaults.standard.string(forKey: "uid")
+    
+    func getData() {
+        
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Read the documents at a specific path
+        db.collection("users").whereField("id", isEqualTo:userUid).getDocuments
+            { snapshot, error in
+            
+            // Check for errors
+            if error == nil {
+                // No errors
+                
+                if let snapshot = snapshot {
+                    
+                    // Update the list property in the main thread
+                    DispatchQueue.main.async {
+                        
+                        // Get all the documents and create Todos
+                        self.userData = snapshot.documents.map { d in
+                            
+                            // Create a Todo item for each document returned
+                            return UserDetails(  name: d["name"] as? String ?? "",
+                                                 city : d["city"] as? String ?? "",
+                                                 budget : d["budget"] as? String ?? "",
+                                                 available : d["available"] as? String ?? "",
+                                                 Gender : d["Gender"] as? String ?? "",
+                                                 about : d["about"] as? String ?? "",
+                                                 interest : d["interest"] as? String ?? "",
+                                                 disrticts : d["disrticts"] as? String ?? "",
+                                                 PeriodOfStay : d["PeriodOfStay"] as? String ?? "",
+                                                 RoomType : d["RoomType"] as? String ?? "",
+                                                 Conditions : d["Conditions"] as? String ?? "",
+                                                 showProfile : d["showProfile"] as? Bool ?? false,
+                                                 date : d["date"] as? Date ?? Date())
+                        }
+
+                    }
+                    
+                    
+                }
+            }
+            else {
+                // Handle the error
+                print(error?.localizedDescription)
+                print("try again")
+            }
+        }
+    }
+    
     func fetchData() {
         db.collection("users").whereField("id", isEqualTo:userUid).getDocuments { doucments, error in
             
@@ -38,8 +89,7 @@ class userDetailsViewModel: ObservableObject{
                     let RoomType = document.data()["RoomType"] as? String
                     let Conditions = document.data()["Conditions"] as? String
                     let showProfile = document.data()["showProfile"] as? Bool
-                    let date = document.data()["date"] as? String
-                    let test = "Hello"
+                    let date = document.data()["date"] as? Date
 
                     UserDefaults.standard.set(name, forKey: "name")
                     UserDefaults.standard.set(budget, forKey: "budget")
@@ -54,10 +104,10 @@ class userDetailsViewModel: ObservableObject{
                     UserDefaults.standard.set(showProfile, forKey: "showProfile")
                     UserDefaults.standard.set(date, forKey: "date")
                     UserDefaults.standard.set(RoomType, forKey: "RoomType")
-                    UserDefaults.standard.set(test, forKey: "test")
+                    UserDefaults.standard.set(date, forKey: "date")
                     
                     
-                    let userData = UserDetails(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? "1", about: about ?? "", interest: interest ?? "", disrticts: disrticts ?? "", PeriodOfStay: PeriodOfStay ?? "", RoomType: RoomType ?? "", Conditions: Conditions ?? "", showProfile: showProfile ?? false)
+                    let userData = UserDetails(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? "1", about: about ?? "", interest: interest ?? "", disrticts: disrticts ?? "", PeriodOfStay: PeriodOfStay ?? "", RoomType: RoomType ?? "", Conditions: Conditions ?? "", showProfile: showProfile ?? false, date: date ?? Date())
                    
                     print("all data saved \(userData)")
 

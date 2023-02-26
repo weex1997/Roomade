@@ -1,20 +1,20 @@
 //
-//  UserInfo.swift
+//  userProfile.swift
 //  Roomade
 //
-//  Created by Khulood Alhamed on 25/02/2023.
+//  Created by Wedad Almehmadi on 26/02/2023.
 //
 
+import Foundation
 import SwiftUI
-struct UserInfo: View {
-    
-    @State var userDetails : UserDetails
-    @Environment(\.openURL) var openURL
-    
 
+struct userProfile: View {
+
+    @ObservedObject var model = userDetailsViewModel()
+    let userUID = UserDefaults.standard.string(forKey: "uid")
+    
     var body: some View {
-        
-        
+        ForEach(model.userData, id: \.id) { user in
             ZStack{
                 Color("Background")
                 
@@ -39,14 +39,14 @@ struct UserInfo: View {
                                 Image("1")
                                 
                             }//zstack
-                                
-                            Text(userDetails.name)
+                            
+                            Text(user.name)
                             
                                 .font(.title2)
                             
                                 .foregroundColor(.white)
                             
-                            Text(userDetails.city)
+                            Text(user.city)
                             
                                 .font(.footnote)
                             
@@ -77,7 +77,7 @@ struct UserInfo: View {
                                             
                                             Text("Budget")
                                             
-                                            Text(userDetails.budget)
+                                            Text(user.budget)
                                                 .foregroundColor(.gray)
                                             
                                             
@@ -114,7 +114,7 @@ struct UserInfo: View {
                                             
                                             Text("Available")
                                             
-                                            Text(userDetails.available)
+                                            Text(user.available)
                                                 .foregroundColor(.gray)
                                             
                                             
@@ -129,35 +129,28 @@ struct UserInfo: View {
                                 
                             }
                             
-                        //vstack
+                            //vstack
+                            
+                        }//bigzstack
                         
-                    }//bigzstack
-                    
-                    
-                }
+                        
+                    }
                     
                     ScrollView{
                         
                         VStack{
                             
-                            //                        Button{
-                            //
-                            //
-                            //
-                            //                        } label:{
-                            //
-                            //                            Text("Edit")
-                            //
-                            //                                .fontWeight(.medium)
-                            //
-                            //                                .font(.system(size: 20))
-                            //
-                            //
-                            //
-                            //                        }
-                            //
-                            //                        .padding(.leading, 280)
-                            
+//                            Button{
+//                                NavigationLink(destination: informationPage().navigationBarBackButtonHidden(false)){
+//                                    informationPage()
+//                                }
+//                            } label:{
+//                                Text("Edit")
+//                                    .fontWeight(.medium)
+//                                    .font(.system(size: 20))
+//                                
+//                            }
+//                            .padding(.leading, 280)
                             
                             
                             ZStack{
@@ -182,7 +175,7 @@ struct UserInfo: View {
                                     
                                         .padding(.bottom, 3)
                                     
-                                    Text(userDetails.about)
+                                    Text(user.about)
                                     
                                         .foregroundColor(Color("Dg"))
                                     
@@ -238,7 +231,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text(userDetails.city)
+                                        Text(user.city)
                                         
                                             .foregroundColor(Color("Dg"))
                                         
@@ -288,7 +281,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text(userDetails.disrticts)
+                                        Text(user.disrticts)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -344,7 +337,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text(userDetails.PeriodOfStay)
+                                        Text(user.PeriodOfStay)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -404,7 +397,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text(userDetails.RoomType)
+                                        Text(user.RoomType)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -462,7 +455,7 @@ struct UserInfo: View {
                                         
                                             .padding(.bottom, 3)
                                         
-                                        Text(userDetails.interest)
+                                        Text(user.interest)
                                         
                                         // .multilineTextAlignment(.center)
                                         
@@ -506,7 +499,7 @@ struct UserInfo: View {
                                     
                                         .padding(.bottom, 3)
                                     
-                                    Text(userDetails.Conditions)
+                                    Text(user.Conditions)
                                     
                                         .foregroundColor(Color("Dg"))
                                     
@@ -524,54 +517,6 @@ struct UserInfo: View {
                                 
                             }.padding(.bottom, 20)
                             
-                            
-                            
-                            Button{
-                                
-                                openURL(URL(string: "https://wa.me/966")!)
-                                
-                            } label:{
-                                
-                                
-                                
-                                ZStack{
-                                    
-                                    RoundedRectangle(cornerRadius: 8)
-                                    
-                                        .fill(Color("wc"))
-                                    
-                                        .frame(width: 310, height: 54)
-                                    
-                                    HStack(spacing:10){
-                                        
-                                        
-                                        
-                                        Image("Vector")
-                                        
-                                        
-                                        
-                                        Text("Send Message on whatsapp")
-                                        
-                                            .fontWeight(.medium)
-                                        
-                                            .font(.system(size: 18))
-                                        
-                                            .foregroundColor(.white)
-                                        
-                                        
-                                        
-                                    }
-                                    
-                                }
-                                
-                                
-                                
-                            }.padding(.bottom, 20)
-                            
-                            
-                            
-                            
-                            
                         }//vstack
                         
                     }//scroll
@@ -580,21 +525,19 @@ struct UserInfo: View {
                 
                 .padding()
             }
-        
-        }//zstack one big
-        
-    }
-    
-
-
-
-
-struct UserInfo_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        
-        UserInfo(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: "1", about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false,date: Date() ))
+        }
         
     }
-    
+    init() {
+        model.getData()
+    }
 }
+
+struct userProfile_Previews: PreviewProvider {
+    static var previews: some View {
+        userProfile()
+    }
+}
+
+
+

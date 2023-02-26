@@ -23,4 +23,7 @@ struct User: Identifiable {
     var RoomType : String
     var Conditions : String
     var showProfile : Bool
+    var date : Date
+  //  var isLogged : Bool
+
 }

@@ -26,93 +26,91 @@ struct HomeCard: View {
     @State private var showImage = false
     
     let uid = UserDefaults.standard.string(forKey: "uid") ?? nil
-    
+    let name = UserDefaults.standard.string(forKey: "name") ?? nil
     var body: some View {
         
-        
-        ZStack{
-            Color("Background")
-                .ignoresSafeArea()
-            
-            VStack{
-                let user1 = Auth.auth().currentUser;
-                if ((user1) != nil) {
-                    
-                    //                    user is logged in
-//                    NavigationLink(destination: UserInfo(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: "1", about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false )).navigationBarBackButtonHidden(false))
-                    NavigationLink(destination: informationPage().navigationBarBackButtonHidden(false)) {                       ProfileCard()
-                            .padding(.top, 10 )
-                            .padding(.bottom, 20)
-                    }
-                }else{
-                    //user is not logged in
-                    NavigationLink(destination: LogIn().navigationBarBackButtonHidden(false)){
-                        ProfileCard()
-                            .padding(.top, 10 )
-                            .padding(.bottom, 20)
-                        //                        }
-                        
-                    }
-                    HStack{
-                        
-                        // City filter
-                        VStack{
-                            ZStack{
-                                
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(.white)
-                                    .frame(width: 134, height: 44)
-                                Picker("Select a city", selection: $selection) {
-                                    ForEach(city, id: \.self) {
-                                        Text($0)
-                                    }
-                                }.pickerStyle(.automatic)
-                            }
-                        }.padding(.leading, 170)
-                        
-                        //Budget filter
-                        VStack{
-                            ZStack{
-                                
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(.white)
-                                    .frame(width: 134, height: 44)
-                                Picker("Select a city", selection: $selection2) {
-                                    ForEach(budget, id: \.self) {
-                                        Text($0)
-                                    }
-                                }.pickerStyle(.automatic)
-                            }.padding(.trailing, 230)
-                                .padding(.leading, 16)
-                        }
-                        // Gender filter
-                        //                        VStack{
-                        //                            ZStack{
-                        //
-                        //                                RoundedRectangle(cornerRadius: 10)
-                        //                                    .fill(.white)
-                        //                                    .frame(width: 134, height: 44)
-                        //                                Picker("Select a gender", selection: $selection3) {
-                        //                                    ForEach(gender, id: \.self) {
-                        //                                        Text($0)
-                        //                                    }
-                        //                                }.pickerStyle(.automatic)
-                        //                            }.padding(.trailing, 230)
-                        //                                .padding(.leading, 16)
-                        //                        }
-                        
-                        
-                    }
-                    //                    NavigationLink(destination: UserInfo(userDetails: .init(name: "Hind", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false )).navigationBarBackButtonHidden(false)){
-                    userCard
-                        .onAppear(){
-                            self.viewModel.fetchData()
-                        }
-                    //                    }
-                    
-                }
+            ZStack{
+                Color("Background")
+                    .ignoresSafeArea()
                 
-            }
+                VStack{
+                    let user1 = Auth.auth().currentUser;
+                    if ((user1) != nil) {
+                        
+                        //user is logged in
+                        NavigationLink(destination: AccountView().navigationBarBackButtonHidden(false)){
+                            ProfileCard()
+                                .padding(.top, 10 )
+                                .padding(.bottom, 20)
+                        }
+                    }else{
+                        //user is not logged in
+                        NavigationLink(destination: LogIn().navigationBarBackButtonHidden(false)){
+                            ProfileCard()
+                                .padding(.top, 10 )
+                                .padding(.bottom, 20)
+                            //                        }
+                            
+                        }
+                    }
+                        HStack{
+                            
+                            // City filter
+                            VStack{
+                                ZStack{
+                                    
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(.white)
+                                        .frame(width: 134, height: 44)
+                                    Picker("Select a city", selection: $selection) {
+                                        ForEach(city, id: \.self) {
+                                            Text($0)
+                                        }
+                                    }.pickerStyle(.automatic)
+                                }
+                            }.padding(.leading, 170)
+                            
+                            //Budget filter
+                            VStack{
+                                ZStack{
+                                    
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(.white)
+                                        .frame(width: 134, height: 44)
+                                    Picker("Select a city", selection: $selection2) {
+                                        ForEach(budget, id: \.self) {
+                                            Text($0)
+                                        }
+                                    }.pickerStyle(.automatic)
+                                }.padding(.trailing, 230)
+                                    .padding(.leading, 16)
+                            }
+                            // Gender filter
+                            //                        VStack{
+                            //                            ZStack{
+                            //
+                            //                                RoundedRectangle(cornerRadius: 10)
+                            //                                    .fill(.white)
+                            //                                    .frame(width: 134, height: 44)
+                            //                                Picker("Select a gender", selection: $selection3) {
+                            //                                    ForEach(gender, id: \.self) {
+                            //                                        Text($0)
+                            //                                    }
+                            //                                }.pickerStyle(.automatic)
+                            //                            }.padding(.trailing, 230)
+                            //                                .padding(.leading, 16)
+                            //                        }
+                            
+                            
+                        }
+                        //                    NavigationLink(destination: UserInfo(userDetails: .init(name: "Hind", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: 1, about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false )).navigationBarBackButtonHidden(false)){
+                        userCard
+                            .onAppear(){
+                                self.viewModel.fetchData()
+                            }
+                        //                    }
+                        
+                    }
         }
     }
     
@@ -131,7 +129,7 @@ struct HomeCard: View {
                         
                         if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget") {
                             
-                            NavigationLink(destination: UserInfo(userDetails: .init(name: user.name, city: user.city, budget: user.budget, available: user.available, Gender: user.Gender, about: user.about,  interest:user.interest, disrticts:"Ruh", PeriodOfStay:user.PeriodOfStay, RoomType:user.RoomType, Conditions:user.Conditions, showProfile:user.showProfile )).navigationBarBackButtonHidden(false)){
+                            NavigationLink(destination: UserInfo(userDetails: .init(name: user.name, city: user.city, budget: user.budget, available: user.available, Gender: user.Gender, about: user.about,  interest:user.interest, disrticts:"Ruh", PeriodOfStay:user.PeriodOfStay, RoomType:user.RoomType, Conditions:user.Conditions, showProfile:user.showProfile , date: Date() )).navigationBarBackButtonHidden(false)){
                                 VStack{
                                     
                                     VStack{

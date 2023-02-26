@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 struct informationPage: View {
     
-    
+    @State var logIn = LogIn()
     @State var about = "Here are space to write some information about you.."
     @State var interest = ""
     @State var city = ""
@@ -220,7 +220,8 @@ struct informationPage: View {
                 HStack{
                     Button("save") {
                         let db = Firestore.firestore()
-                        let userUID = Auth.auth().currentUser?.uid
+                        let userUID = UserDefaults.standard.string(forKey: "uid")
+
 
                         db.collection("users").document(userUID!).setData([
                             "about": about,
@@ -233,6 +234,7 @@ struct informationPage: View {
                             "Conditions" : Conditions,
                             "showProfile" : showProfile,
                             "AvailableFrom" : Date()], merge: true)
+//                        logIn.signOut()
                         
                        
                     }

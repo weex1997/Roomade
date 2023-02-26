@@ -12,7 +12,8 @@ import AuthenticationServices
 import FirebaseFirestore
 
 struct LogIn: View {
-    
+    @StateObject var viewModel = userViewModel()
+
     @State var currentNonce:String?
     
     //Hashing function using CryptoKit
@@ -66,7 +67,7 @@ struct LogIn: View {
     @State var SaveData = false
     var body: some View {
             VStack{
-                NavigationLink(destination: SingUP().navigationBarBackButtonHidden(true), isActive: $isActive){}
+                NavigationLink(destination: SingUP().navigationBarBackButtonHidden(false), isActive: $isActive){}
                 NavigationLink(destination: HomeCard().navigationBarBackButtonHidden(true), isActive: $SaveData){}
                 //                HStack(){
                 //                    Text("Phone Number")
@@ -175,8 +176,8 @@ struct LogIn: View {
                                             return
                                         }
                                         print("signed in")
-                                        
-                                      
+                                        print(viewModel.isLogged)
+
                                         
 
                                         guard let user = authResult?.user else { return }
@@ -199,7 +200,7 @@ struct LogIn: View {
                                         getDocument()
 
                                     }
-                                    
+                                    viewModel.isLogged = true
                                     print("\(String(describing: Auth.auth().currentUser?.uid))")
                                 default:
                                     break
