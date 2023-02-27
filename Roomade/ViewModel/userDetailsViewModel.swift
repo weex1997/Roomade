@@ -50,7 +50,7 @@ class userDetailsViewModel: ObservableObject{
                                                  RoomType : d["RoomType"] as? String ?? "",
                                                  Conditions : d["Conditions"] as? String ?? "",
                                                  showProfile : d["showProfile"] as? Bool ?? false,
-                                                 date : d["date"] as? Date ?? Date())
+                                                 Birthdate : d["Birthdate"] as? Date ?? Date())
                         }
 
                     }
@@ -89,7 +89,7 @@ class userDetailsViewModel: ObservableObject{
                     let RoomType = document.data()["RoomType"] as? String
                     let Conditions = document.data()["Conditions"] as? String
                     let showProfile = document.data()["showProfile"] as? Bool
-                    let date = document.data()["date"] as? Date
+                    let Birthdate = document.data()["Birthdate"] as? Date
 
                     UserDefaults.standard.set(name, forKey: "name")
                     UserDefaults.standard.set(budget, forKey: "budget")
@@ -102,12 +102,12 @@ class userDetailsViewModel: ObservableObject{
                     UserDefaults.standard.set(PeriodOfStay, forKey: "PeriodOfStay")
                     UserDefaults.standard.set(Conditions, forKey: "Conditions")
                     UserDefaults.standard.set(showProfile, forKey: "showProfile")
-                    UserDefaults.standard.set(date, forKey: "date")
+                    UserDefaults.standard.set(Birthdate, forKey: "date")
                     UserDefaults.standard.set(RoomType, forKey: "RoomType")
-                    UserDefaults.standard.set(date, forKey: "date")
+                    UserDefaults.standard.set(Birthdate, forKey: "Birthdate")
                     
                     
-                    let userData = UserDetails(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? "1", about: about ?? "", interest: interest ?? "", disrticts: disrticts ?? "", PeriodOfStay: PeriodOfStay ?? "", RoomType: RoomType ?? "", Conditions: Conditions ?? "", showProfile: showProfile ?? false, date: date ?? Date())
+                    let userData = UserDetails(name: name ?? "", city: city ?? "", budget: budget ?? "", available: available ?? "", Gender: Gender ?? "1", about: about ?? "", interest: interest ?? "", disrticts: disrticts ?? "", PeriodOfStay: PeriodOfStay ?? "", RoomType: RoomType ?? "", Conditions: Conditions ?? "", showProfile: showProfile ?? false, Birthdate: Birthdate ?? Date())
                    
                     print("all data saved \(userData)")
 

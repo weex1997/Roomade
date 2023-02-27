@@ -129,7 +129,7 @@ struct HomeCard: View {
                         
                         if (user.city == selection || selection == "City") && (user.budget == selection2 || selection2 == "Budget") {
                             
-                            NavigationLink(destination: UserInfo(userDetails: .init(name: user.name, city: user.city, budget: user.budget, available: user.available, Gender: user.Gender, about: user.about,  interest:user.interest, disrticts:"Ruh", PeriodOfStay:user.PeriodOfStay, RoomType:user.RoomType, Conditions:user.Conditions, showProfile:user.showProfile , date: Date() )).navigationBarBackButtonHidden(false)){
+                            NavigationLink(destination: UserInfo(userDetails: .init(name: user.name, city: user.city, budget: user.budget, available: user.available, Gender: user.Gender, about: user.about,  interest:user.interest, disrticts:user.disrticts, PeriodOfStay:user.PeriodOfStay, RoomType:user.RoomType, Conditions:user.Conditions, showProfile:user.showProfile , Birthdate: Date() )).navigationBarBackButtonHidden(false)){
                                 VStack{
                                     
                                     VStack{

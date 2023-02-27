@@ -45,63 +45,94 @@ struct informationPage: View {
                 }
                 .padding(.bottom,3)
                 .padding(.leading,16)
+                
                 HStack{
-                    TextEditor(text: $about)
-                        .opacity(0.3)
+                    TextEditor(text: self.$about)
+                    // make the color of the placeholder gray
+                        .foregroundColor(self.about == "Here are space to write some information about you.." ? .gray : .black)
                         .padding(14)
                         .font(.system(size: 16))
                         .frame(width: 358,height: 143)
                         .overlay(RoundedRectangle(cornerRadius: 5)
                             .stroke(Color("LightBlueColor"), lineWidth: 1))
+                    
+                        .onAppear {
+                            // remove the placeholder text when keyboard appears
+                            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+                                withAnimation {
+                                    if self.about == "Here are space to write some information about you.." {
+                                        self.about = ""
+                                    }
+                                }
+                            }
+                            
+                            // put back the placeholder text if the user dismisses the keyboard without adding any text
+                            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (noti) in
+                                withAnimation {
+                                    if self.about == "" {
+                                        self.about = "Here are space to write some information about you.."
+                                    }
+                                }
+                            }
+                        }
+                    
+                    //                            TextEditor(text: $about)
+                    //                                .opacity(0.3)
+                    //                                .padding(14)
+                    //                                .font(.system(size: 16))
+                    //                                .frame(width: 358,height: 143)
+                    //                                .overlay(RoundedRectangle(cornerRadius: 5)
+                    //                                    .stroke(Color("LightBlueColor"), lineWidth: 1))
                 }
-                HStack(){
-                    Text("Interest")
-                        .foregroundColor(Color("DarkGaryColor"))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 17))
-                }
-                .padding(.bottom,3)
-                .padding(.leading,16)
-                HStack{
-                    TextField("Add your interests", text: $interest)
-                        .padding(14)
-                        .font(.system(size: 16))
-                        .frame(width: 358,height: 43)
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color("LightBlueColor"), lineWidth: 1))
-                }
-                HStack(){
-                    Text("Location")
-                        .foregroundColor(Color("DarkGaryColor"))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 17))
-                }
-                .padding(.bottom,3)
-                .padding(.leading,16)
-                HStack{
-                    TextField("City", text: $city)
-                        .padding(14)
-                        .font(.system(size: 16))
-                        .frame(width: 358,height: 43)
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color("LightBlueColor"), lineWidth: 1))
-                }
-                HStack(){
-                    Text("Disrticts")
-                        .foregroundColor(Color("DarkGaryColor"))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 17))
-                }
-                .padding(.bottom,3)
-                .padding(.leading,16)
-                HStack{
-                    TextField("Type your favourites districts", text: $disrticts)
-                        .padding(14)
-                        .font(.system(size: 16))
-                        .frame(width: 358,height: 43)
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color("LightBlueColor"), lineWidth: 1))
-                }
+            }
+            
+            HStack(){
+                Text("Interest")
+                    .foregroundColor(Color("DarkGaryColor"))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: 17))
+            }
+            .padding(.bottom,3)
+            .padding(.leading,16)
+            HStack{
+                TextField("Add your interests", text: $interest)
+                    .padding(14)
+                    .font(.system(size: 16))
+                    .frame(width: 358,height: 43)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color("LightBlueColor"), lineWidth: 1))
+            }
+            HStack(){
+                Text("Location")
+                    .foregroundColor(Color("DarkGaryColor"))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: 17))
+            }
+            .padding(.bottom,3)
+            .padding(.leading,16)
+            HStack{
+                TextField("City", text: $city)
+                    .padding(14)
+                    .font(.system(size: 16))
+                    .frame(width: 358,height: 43)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color("LightBlueColor"), lineWidth: 1))
+            }
+            HStack(){
+                Text("Disrticts")
+                    .foregroundColor(Color("DarkGaryColor"))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: 17))
+            }
+            .padding(.bottom,3)
+            .padding(.leading,16)
+            HStack{
+                TextField("Type your favourites districts", text: $disrticts)
+                    .padding(14)
+                    .font(.system(size: 16))
+                    .frame(width: 358,height: 43)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color("LightBlueColor"), lineWidth: 1))
             }
             Group{
                 HStack(){
@@ -131,7 +162,8 @@ struct informationPage: View {
                 HStack{
                     DatePicker("",
                                selection: $date,
-                               displayedComponents: [.date])
+                               displayedComponents: [.date]
+                    )
                     .frame(width: 358,height: 43)
                     .padding(14)
                     .font(.system(size: 16))
@@ -202,16 +234,40 @@ struct informationPage: View {
                 }
                 .padding(.bottom,3)
                 .padding(.leading,16)
+                
                 HStack{
-                    TextEditor(text: $Conditions)
-                        .opacity(0.3)
+                    TextEditor(text: self.$Conditions)
+                    // make the color of the placeholder gray
+                        .foregroundColor(self.Conditions == "Here are space to write you conditions .." ? .gray : .black)
                         .padding(14)
                         .font(.system(size: 16))
                         .frame(width: 358,height: 143)
                         .overlay(RoundedRectangle(cornerRadius: 5)
                             .stroke(Color("LightBlueColor"), lineWidth: 1))
+                    
+                        .onAppear {
+                            // remove the placeholder text when keyboard appears
+                            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+                                withAnimation {
+                                    if self.Conditions == "Here are space to write you conditions .." {
+                                        self.Conditions = ""
+                                    }
+                                }
+                            }
+                            
+                            // put back the placeholder text if the user dismisses the keyboard without adding any text
+                            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (noti) in
+                                withAnimation {
+                                    if self.Conditions == "" {
+                                        self.Conditions = "Here are space to write you conditions .."
+                                    }
+                                }
+                            }
+                        }
                 }
+                
             }
+            
             Group{
                 HStack{
                     Toggle(" Make my information visible to find me by roommates", isOn: $showProfile)
@@ -221,8 +277,8 @@ struct informationPage: View {
                     Button("save") {
                         let db = Firestore.firestore()
                         let userUID = UserDefaults.standard.string(forKey: "uid")
-
-
+                        
+                        
                         db.collection("users").document(userUID!).setData([
                             "about": about,
                             "interest" : interest,
@@ -233,10 +289,8 @@ struct informationPage: View {
                             "RoomType" : RoomType,
                             "Conditions" : Conditions,
                             "showProfile" : showProfile,
-                            "AvailableFrom" : Date()], merge: true)
-//                        logIn.signOut()
+                            "Available" : date], merge: true)
                                                 
-                       
                     }
                     .foregroundColor(Color.white)
                     .font(.system(size: 18,weight: .semibold))
@@ -244,20 +298,21 @@ struct informationPage: View {
                     .background(Color("BlueColor"))
                     .cornerRadius(10)
                 }
-        }.navigationBarTitle("Information", displayMode: .inline)
-                        .toolbar{
-                            ToolbarItemGroup(placement: .navigationBarTrailing){
-                                Button(action: {
-                                }, label: {
-                                    NavigationLink(destination: HomeCard()) {
-                                         Text("Skip")
-                                     }
-                                })                            }
-                        }
+            }.navigationBarTitle("Information", displayMode: .inline)
+                .toolbar{
+                    ToolbarItemGroup(placement: .navigationBarTrailing){
+                        Button(action: {
+                        }, label: {
+                            NavigationLink(destination: HomeCard()) {
+                                Text("Skip")
+                            }
+                        })
+                    }
+                }
+        }
     }
-    }
-    
 }
+
 
 struct informationPage_Previews: PreviewProvider {
     static var previews: some View {

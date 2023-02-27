@@ -528,7 +528,7 @@ struct UserInfo: View {
                             
                             Button{
                                 
-                                openURL(URL(string: "https://wa.me/966")!)
+                                openURL(URL(string: "https://wa.me/966+")!)
                                 
                             } label:{
                                 
@@ -593,7 +593,7 @@ struct UserInfo_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        UserInfo(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: "1", about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false,date: Date() ))
+        UserInfo(userDetails: .init(name: "Sara", city: "Riyadh", budget: "1K-2K", available: "Now", Gender: "1", about: "bio",  interest:"Cooking, Reading Arts, and Music", disrticts:"Ruh", PeriodOfStay:"9 - 12 months", RoomType:"Single room", Conditions:"My name is Sara and I’m 24 Years old I searching for department in Alnajis Dist. I wanted because I’m coming from Jeddah to study at Nora univrsity ", showProfile:false,Birthdate: Date() ))
         
     }
     

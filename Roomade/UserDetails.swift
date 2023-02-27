@@ -22,5 +22,5 @@ struct UserDetails: Identifiable {
     var RoomType : String
     var Conditions : String
     var showProfile : Bool
-    var date : Date
+    var Birthdate : Date
 }
