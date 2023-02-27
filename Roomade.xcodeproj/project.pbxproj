@@ -23,6 +23,7 @@
 		A877CF6E29A8EC3E00DD3161 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A877CF6D29A8EC3E00DD3161 /* ProfileCard.swift */; };
 		A88F78212994DFB300D3D109 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F78202994DFB300D3D109 /* HomeCard.swift */; };
 		A898C60E29AA312B00EC1815 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C60D29AA312B00EC1815 /* UserInfo.swift */; };
+		A8F575F429ACFD7900CB8E4C /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F575F329ACFD7900CB8E4C /* Favorite.swift */; };
 		FC039C7B299B927700D72F06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC039C7A299B927700D72F06 /* GoogleService-Info.plist */; };
 		FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */; };
 		FC0879C029A28A21001C8806 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC0879BF29A28A21001C8806 /* FirebaseAuth */; };
@@ -57,6 +58,7 @@
 		A877CF6D29A8EC3E00DD3161 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		A88F78202994DFB300D3D109 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 		A898C60D29AA312B00EC1815 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		A8F575F329ACFD7900CB8E4C /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		FC039C7A299B927700D72F06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC0879A2299CD5B9001C8806 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		FC0879A4299FC377001C8806 /* Roomade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roomade.entitlements; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				A877CF6D29A8EC3E00DD3161 /* ProfileCard.swift */,
 				5656F9FC29A4B5B700B22043 /* Logo.swift */,
 				5656F9FA29A4B5A300B22043 /* Splash.swift */,
+				A8F575F329ACFD7900CB8E4C /* Favorite.swift */,
 				FC0879A1299CD599001C8806 /* ViewModel */,
 				21D109A62998E762006C38D7 /* AccountView.swift */,
 				21D109A8299B61C1006C38D7 /* SubscribeView.swift */,
@@ -248,6 +251,7 @@
 				FCEBA6452994C87A003FB295 /* ContentView.swift in Sources */,
 				FC0879A3299CD5B9001C8806 /* PhoneViewModel.swift in Sources */,
 				4E5F50F629A974870006F391 /* informationPage.swift in Sources */,
+				A8F575F429ACFD7900CB8E4C /* Favorite.swift in Sources */,
 				A877CF6E29A8EC3E00DD3161 /* ProfileCard.swift in Sources */,
 				4E5F50FC29A992650006F391 /* UserDetails.swift in Sources */,
 				FC9EA69A299A211700186387 /* SingUP.swift in Sources */,

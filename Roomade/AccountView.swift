@@ -97,9 +97,9 @@ struct AccountView: View {
                         .frame(width:360, height: 65)
                     
                     NavigationLink {
-                        SubscribeView()
+                        Favorite()
                     } label: {
-                        Text("Favourate")
+                        Text("Favourite")
                             .foregroundColor(.black)
                         //Spacer()
                         Image(systemName: "chevron.right")
