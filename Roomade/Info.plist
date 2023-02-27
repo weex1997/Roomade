@@ -20,5 +20,9 @@
 		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.4D.Roomade</string>
+	</array>
 </dict>
 </plist>
