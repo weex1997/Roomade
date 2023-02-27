@@ -28,7 +28,7 @@ class userViewModel: ObservableObject{
                 for document in documents {
                     let name = document.data()["name"] as? String
                     let budget = document.data()["budget"] as? String
-                    let available = document.data()["available"] as? String
+                    let available = document.data()["Available"] as? String
                     let city = document.data()["city"] as? String
                     let Gender = document.data()["Gender"] as? String
                     let phoneNumber = document.data()["phoneNumber"] as? String
