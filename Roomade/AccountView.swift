@@ -120,11 +120,11 @@ struct AccountView: View {
                     NavigationLink {
                         SubscribeView()
                     } label: {
-                        Text("Subscription")
+                        Text("Purchase")
                             .foregroundColor(.black)
                         Image(systemName: "chevron.right")
                             .foregroundColor(.gray)
-                            .padding(.leading, 203)
+                            .padding(.leading, 230)
                     }
                 }//zstack of sub
                 

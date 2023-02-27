@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct UserInfo: View {
-    
+    @State private var showSheet = false
     @State var userDetails : UserDetails
     @Environment(\.openURL) var openURL
     
@@ -528,7 +528,7 @@ struct UserInfo: View {
                             
                             Button{
                                 
-                                openURL(URL(string: "https://wa.me/966+")!)
+                                showSheet = true
                                 
                             } label:{
                                 
@@ -567,6 +567,96 @@ struct UserInfo: View {
                                 
                                 
                             }.padding(.bottom, 20)
+                                .sheet(isPresented: $showSheet, content: {
+
+                                    if #available(iOS 16.0, *) {
+                                        VStack{
+                                            
+                                            
+                                            
+                                            Button{
+                                                
+                                                showSheet = false
+                                                
+                                                
+                                                
+                                            } label:{
+                                                
+                                                Image(systemName: "xmark.circle")
+                                                
+                                                    .padding(.leading, 320)
+                                                
+                                                    .padding(.bottom, 40)
+                                                
+                                                    .foregroundColor(.gray)
+                                                
+                                                    .font(.system(size: 24))
+                                                
+                                                
+                                                
+                                            }
+                                            
+                                            
+                                            
+                                            HStack{
+                                                
+                                                Image(systemName: "exclamationmark.circle")
+                                                
+                                                    .foregroundColor(.gray)
+                                                
+                                                    .font(.system(size: 24))
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                Text("You have only 3 users free to contact")
+                                                
+                                                    .foregroundColor(Color("Dg"))
+                                                
+                                                
+                                                
+                                            }.padding(.top, 30)
+                                            
+                                            
+                                            
+                                            Button{
+                                                
+                                                openURL(URL(string: "https://wa.me/966564429004)")!)
+                                                
+                                            } label:{
+                                                
+                                                ZStack{
+                                                    
+                                                    
+                                                    
+                                                    RoundedRectangle(cornerRadius: 10)
+                                                    
+                                                        .fill(Color("BlueColor"))
+                                                    
+                                                    Text("Continue")
+                                                    
+                                                        .fontWeight(.medium)
+                                                    
+                                                        .font(.system(size: 20))
+                                                    
+                                                        .foregroundColor(.white)
+                                                    
+                                                    
+                                                    
+                                                }//zstack
+                                                
+                                            }.frame(width: 280, height: 54, alignment: .center)
+                                            
+                                                .padding(.top, 40)//label
+                                        }.presentationDetents([.fraction(0.4)])
+                                    } else {
+                                        // Fallback on earlier versions
+                                    }
+
+                                                    })
+
+
                             
                             
                             
