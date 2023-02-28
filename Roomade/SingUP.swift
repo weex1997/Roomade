@@ -93,7 +93,7 @@ struct SingUP: View {
                 HStack{
                     Picker("Gender", selection: $Gender) {
                         Text("Male").tag("0")
-                        Text("Famel").tag("1")
+                        Text("Female").tag("1")
                     }
                     .padding(.leading,-175)
                     .font(.system(size: 16))

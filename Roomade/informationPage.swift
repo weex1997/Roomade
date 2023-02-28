@@ -162,6 +162,7 @@ struct informationPage: View {
                 HStack{
                     DatePicker("",
                                selection: $date,
+                               in: ...Date(),
                                displayedComponents: [.date]
                     )
                     .frame(width: 358,height: 43)
@@ -218,14 +219,6 @@ struct informationPage: View {
                             .stroke(Color("LightBlueColor"), lineWidth: 1))
                     }
                 }
-                //                    HStack{
-                //                        TextField("9 - 12 months", text: $PeriodOfStay)
-                //                            .padding(14)
-                //                            .font(.system(size: 16))
-                //                            .frame(width: 358,height: 43)
-                //                            .overlay(RoundedRectangle(cornerRadius: 5)
-                //                                .stroke(Color("LightBlueColor"), lineWidth: 1))
-                //                    }
                 HStack(){
                     Text("Conditions")
                         .foregroundColor(Color("DarkGaryColor"))
@@ -286,7 +279,7 @@ struct informationPage: View {
                             "disrticts" : disrticts,
                             "budget" : budget,
                             "PeriodOfStay" : PeriodOfStay,
-                            "RoomType" : RoomType,
+                            "RoomType" : value,
                             "Conditions" : Conditions,
                             "showProfile" : showProfile,
                             "Available" : date], merge: true)
