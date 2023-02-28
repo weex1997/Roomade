@@ -20,6 +20,7 @@ struct AccountView: View {
     let userdef = UserDefaults.standard.dictionaryRepresentation
     @StateObject var viewModel = userViewModel()
     
+    
     func ResetDay() {
         for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
             print("\(key) = \(value) \n")
