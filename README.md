@@ -1,11 +1,11 @@
 <!-- PROJECT LOGO -->
 <div>
-<h3><img align="left" width="100" height="100" src="appstore.png"> <br/> Roomade <br/>
+<h3><img align="left" width="100" height="100" src="appstore.png"> <br/> Roomade
 </div>   
 <a href="https://testflight.apple.com/join/OkLcSDv9">Testflight</a>  <br/> <br/> </h3>   
 </div>   
  
-### Overveiw
+## Overveiw
 Roomade is an app that connect people who looking for a roommate.
 
 ### App Statement
