@@ -20,7 +20,7 @@ An app that helps individuals who wants to share house by search for a roommate 
 - Creating a complete, comprehensive design system for the product. ✅
 - Creating a full-functional app.  ✅
 - Using real data coming from the backend, such as server or open source API.. etc  ✅
-- Publish to App Store and expand audience. ❌
+
 
 ## Team
 #### Fourth Dimention
