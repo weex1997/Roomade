@@ -11,8 +11,8 @@ Roomade is an app that connect people who looking for a roommate.
 ### App Statement
 An app that helps individuals who wants to share house by search for a roommate or make their information visible.
 
-### Tools
-[![Swift][Swift-img]][Swift-url] [![SwiftUI][SwiftUI-img]][SwiftUI-url] [![Firebase][Firebase-img]][Firebase-url]  [![Figma][Figma-img]][Figma-url]
+### Technologies & Tools
+[![Swift][Swift-img]][Swift-url] [![SwiftUI][SwiftUI-img]][SwiftUI-url] [![Firebase][Firebase-img]][Firebase-url]  [![Figma][Figma-img]][Figma-url]  [![GitHub][GitHub-img]][GitHub-url]
 
 ## Success Criteria
 - Project is completed on time. ✅
@@ -39,3 +39,6 @@ An app that helps individuals who wants to share house by search for a roommate 
 
 [Figma-img]: https://img.shields.io/badge/-Figma-blue
 [Figma-url]: https://www.figma.com/file/tOwavxZJyGBImzbSgo6fcM/Roomade?node-id=0%3A1&t=SiH0xR3Ug7foYJhO-1
+
+[GitHub-img]: https://img.shields.io/badge/-GitHub-lightgrey
+[GitHub-url]: https://github.com/weex1997/Roomade
