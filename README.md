@@ -38,5 +38,4 @@ An app that helps individuals who wants to share house by search for a roommate 
 [Firebase-url]: https://firebase.google.com
 
 [Figma-img]: https://img.shields.io/badge/-Figma-blue
-[Figma-url]: https://www.figma.com/file/c9Huf9Kh7N93zwRb7sR04U/Memory?node-id=0%3A1
-
+[Figma-url]: https://www.figma.com/file/tOwavxZJyGBImzbSgo6fcM/Roomade?node-id=0%3A1&t=SiH0xR3Ug7foYJhO-1
